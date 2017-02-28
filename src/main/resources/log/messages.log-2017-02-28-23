@@ -1,0 +1,98 @@
+2017-02-28 23:40:02 TRACE AuthorizationFilter:58 - AuthorizationFilter destroy
+2017-02-28 23:52:34 TRACE AuthorizationFilter:23 - AuthorizationFilter init
+2017-02-28 23:54:26 TRACE AuthorizationFilter:58 - AuthorizationFilter destroy
+2017-02-28 23:54:26 TRACE AuthorizationFilter:23 - AuthorizationFilter init
+2017-02-28 23:54:36 TRACE RegistrationServlet:21 - RegistrationServlet GET
+2017-02-28 23:54:43 TRACE LoginServlet:24 - LoginServlet GET
+2017-02-28 23:54:50 TRACE LoginServlet:30 - LoginServlet POST
+2017-02-28 23:54:50 TRACE UserDAO:27 - Connection to DB in getUser method
+2017-02-28 23:54:50 TRACE UserDAO:33 - Get connection in getUser method
+2017-02-28 23:54:50 TRACE ConnectionPool:43 - Получаем доступное подключение из пула
+2017-02-28 23:54:50 TRACE ConnectionPool:46 - AvailableConns size = 0
+2017-02-28 23:54:50 TRACE ConnectionPool:36 - Генерируется новое подключение
+2017-02-28 23:54:51 TRACE UserDAO:46 - Get ResultSet in getUser method
+2017-02-28 23:54:51 TRACE UserDAO:69 - Close PreparedStatement in getUser method
+2017-02-28 23:54:51 TRACE UserDAO:70 - Return connection in getUser method
+2017-02-28 23:54:51 TRACE ConnectionPool:58 - Возвращаем подключение в пулл
+2017-02-28 23:54:51 TRACE UserDAO:74 - Return users - id = 1 login = admin
+2017-02-28 23:54:51 TRACE LoginServlet:40 - authorized and in session set attribute
+2017-02-28 23:54:51 TRACE NotificationListener:18 - NotificationListener attribute added
+2017-02-28 23:54:51 TRACE NotificationListener:18 - NotificationListener attribute added
+2017-02-28 23:54:51 TRACE NotificationListener:18 - NotificationListener attribute added
+2017-02-28 23:54:51 TRACE AuthorizationFilter:30 - AuthorizationFilter doFilter
+2017-02-28 23:54:51 TRACE AdminDashboardServlet:20 - AdminDashboardServlet GET
+2017-02-28 23:56:23 TRACE AuthorizationFilter:58 - AuthorizationFilter destroy
+2017-02-28 23:56:23 TRACE AuthorizationFilter:23 - AuthorizationFilter init
+2017-02-28 23:56:27 TRACE AuthorizationFilter:30 - AuthorizationFilter doFilter
+2017-02-28 23:56:27 TRACE LoginServlet:24 - LoginServlet GET
+2017-02-28 23:56:31 TRACE LoginServlet:30 - LoginServlet POST
+2017-02-28 23:56:31 TRACE UserDAO:27 - Connection to DB in getUser method
+2017-02-28 23:56:31 TRACE UserDAO:33 - Get connection in getUser method
+2017-02-28 23:56:31 TRACE ConnectionPool:43 - Получаем доступное подключение из пула
+2017-02-28 23:56:31 TRACE ConnectionPool:46 - AvailableConns size = 0
+2017-02-28 23:56:31 TRACE ConnectionPool:36 - Генерируется новое подключение
+2017-02-28 23:56:32 TRACE UserDAO:46 - Get ResultSet in getUser method
+2017-02-28 23:56:32 TRACE UserDAO:69 - Close PreparedStatement in getUser method
+2017-02-28 23:56:32 TRACE UserDAO:70 - Return connection in getUser method
+2017-02-28 23:56:32 TRACE ConnectionPool:58 - Возвращаем подключение в пулл
+2017-02-28 23:56:32 TRACE UserDAO:74 - Return users - id = 1 login = admin
+2017-02-28 23:56:32 TRACE LoginServlet:40 - authorized and in session set attribute
+2017-02-28 23:56:32 TRACE NotificationListener:18 - NotificationListener attribute added id
+2017-02-28 23:56:32 TRACE NotificationListener:18 - NotificationListener attribute added admin
+2017-02-28 23:56:32 TRACE NotificationListener:18 - NotificationListener attribute added notification
+2017-02-28 23:56:32 TRACE NotificationListener:21 - NotificationListener event name == notification
+2017-02-28 23:56:32 TRACE AuthorizationFilter:30 - AuthorizationFilter doFilter
+2017-02-28 23:56:32 TRACE AdminDashboardServlet:20 - AdminDashboardServlet GET
+2017-02-28 23:58:15 TRACE LoginServlet:24 - LoginServlet GET
+2017-02-28 23:58:20 TRACE LoginServlet:30 - LoginServlet POST
+2017-02-28 23:58:20 TRACE UserDAO:27 - Connection to DB in getUser method
+2017-02-28 23:58:20 TRACE UserDAO:33 - Get connection in getUser method
+2017-02-28 23:58:20 TRACE ConnectionPool:43 - Получаем доступное подключение из пула
+2017-02-28 23:58:20 TRACE ConnectionPool:49 - AvailableConns size != 0
+2017-02-28 23:58:20 TRACE UserDAO:46 - Get ResultSet in getUser method
+2017-02-28 23:58:20 TRACE UserDAO:69 - Close PreparedStatement in getUser method
+2017-02-28 23:58:20 TRACE UserDAO:70 - Return connection in getUser method
+2017-02-28 23:58:20 TRACE ConnectionPool:58 - Возвращаем подключение в пулл
+2017-02-28 23:58:20 TRACE UserDAO:74 - Return users - id = 1 login = admin
+2017-02-28 23:58:20 TRACE LoginServlet:40 - authorized and in session set attribute
+2017-02-28 23:58:20 TRACE NotificationListener:42 - NotificationListener attribute replaced
+2017-02-28 23:58:20 TRACE NotificationListener:42 - NotificationListener attribute replaced
+2017-02-28 23:58:20 TRACE NotificationListener:42 - NotificationListener attribute replaced
+2017-02-28 23:58:20 TRACE AuthorizationFilter:30 - AuthorizationFilter doFilter
+2017-02-28 23:58:20 TRACE AdminDashboardServlet:20 - AdminDashboardServlet GET
+2017-02-28 23:58:34 TRACE LoginServlet:24 - LoginServlet GET
+2017-02-28 23:58:36 TRACE LoginServlet:24 - LoginServlet GET
+2017-02-28 23:58:40 TRACE LoginServlet:30 - LoginServlet POST
+2017-02-28 23:58:40 TRACE UserDAO:27 - Connection to DB in getUser method
+2017-02-28 23:58:40 TRACE UserDAO:33 - Get connection in getUser method
+2017-02-28 23:58:40 TRACE ConnectionPool:43 - Получаем доступное подключение из пула
+2017-02-28 23:58:40 TRACE ConnectionPool:49 - AvailableConns size != 0
+2017-02-28 23:58:40 TRACE UserDAO:46 - Get ResultSet in getUser method
+2017-02-28 23:58:40 TRACE UserDAO:69 - Close PreparedStatement in getUser method
+2017-02-28 23:58:40 TRACE UserDAO:70 - Return connection in getUser method
+2017-02-28 23:58:40 TRACE ConnectionPool:58 - Возвращаем подключение в пулл
+2017-02-28 23:58:40 TRACE UserDAO:74 - Return users - id = 1 login = admin
+2017-02-28 23:58:40 TRACE LoginServlet:40 - authorized and in session set attribute
+2017-02-28 23:58:40 TRACE NotificationListener:42 - NotificationListener attribute replaced
+2017-02-28 23:58:40 TRACE NotificationListener:42 - NotificationListener attribute replaced
+2017-02-28 23:58:40 TRACE NotificationListener:42 - NotificationListener attribute replaced
+2017-02-28 23:58:40 TRACE AuthorizationFilter:30 - AuthorizationFilter doFilter
+2017-02-28 23:58:40 TRACE AdminDashboardServlet:20 - AdminDashboardServlet GET
+2017-02-28 23:59:29 TRACE LoginServlet:24 - LoginServlet GET
+2017-02-28 23:59:39 TRACE LoginServlet:24 - LoginServlet GET
+2017-02-28 23:59:44 TRACE LoginServlet:30 - LoginServlet POST
+2017-02-28 23:59:44 TRACE UserDAO:27 - Connection to DB in getUser method
+2017-02-28 23:59:44 TRACE UserDAO:33 - Get connection in getUser method
+2017-02-28 23:59:44 TRACE ConnectionPool:43 - Получаем доступное подключение из пула
+2017-02-28 23:59:44 TRACE ConnectionPool:49 - AvailableConns size != 0
+2017-02-28 23:59:44 TRACE UserDAO:46 - Get ResultSet in getUser method
+2017-02-28 23:59:44 TRACE UserDAO:69 - Close PreparedStatement in getUser method
+2017-02-28 23:59:44 TRACE UserDAO:70 - Return connection in getUser method
+2017-02-28 23:59:44 TRACE ConnectionPool:58 - Возвращаем подключение в пулл
+2017-02-28 23:59:44 TRACE UserDAO:74 - Return users - id = 1 login = admin
+2017-02-28 23:59:44 TRACE LoginServlet:40 - authorized and in session set attribute
+2017-02-28 23:59:44 TRACE NotificationListener:42 - NotificationListener attribute replaced
+2017-02-28 23:59:44 TRACE NotificationListener:42 - NotificationListener attribute replaced
+2017-02-28 23:59:44 TRACE NotificationListener:42 - NotificationListener attribute replaced
+2017-02-28 23:59:44 TRACE AuthorizationFilter:30 - AuthorizationFilter doFilter
+2017-02-28 23:59:44 TRACE AdminDashboardServlet:20 - AdminDashboardServlet GET

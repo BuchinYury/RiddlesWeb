@@ -1,0 +1,274 @@
+2017-02-28 15:43:52 TRACE AuthorizationFilter:58 - AuthorizationFilter destroy
+2017-02-28 15:43:53 TRACE AuthorizationFilter:23 - AuthorizationFilter init
+2017-02-28 15:44:15 TRACE AuthorizationFilter:58 - AuthorizationFilter destroy
+2017-02-28 15:44:15 TRACE AuthorizationFilter:23 - AuthorizationFilter init
+2017-02-28 15:44:21 TRACE AuthorizationFilter:30 - AuthorizationFilter doFilter
+2017-02-28 15:44:21 TRACE LoginServlet:24 - LoginServlet GET
+2017-02-28 15:44:27 TRACE LoginServlet:30 - LoginServlet POST
+2017-02-28 15:44:27 TRACE UserDAO:26 - Connection to DB in getUser method
+2017-02-28 15:44:27 TRACE UserDAO:32 - Get connection in getUser method
+2017-02-28 15:44:27 TRACE ConnectionPool:41 - Получаем доступное подключение из пула
+2017-02-28 15:44:27 TRACE ConnectionPool:44 - AvailableConns size = 0
+2017-02-28 15:44:27 TRACE ConnectionPool:34 - Генерируется новое подключение
+2017-02-28 15:44:28 TRACE UserDAO:45 - Get ResultSet in getUser method
+2017-02-28 15:44:28 TRACE UserDAO:63 - Close PreparedStatement in getUser method
+2017-02-28 15:44:28 TRACE UserDAO:64 - Return connection in getUser method
+2017-02-28 15:44:28 TRACE ConnectionPool:56 - Возвращаем подключение в пулл
+2017-02-28 15:44:28 TRACE UserDAO:68 - Return users - id = 1 login = admin
+2017-02-28 15:44:28 TRACE LoginServlet:40 - authorized and in session set attribute
+2017-02-28 15:44:28 TRACE AuthorizationFilter:30 - AuthorizationFilter doFilter
+2017-02-28 15:44:28 TRACE AdminDashboardServlet:20 - AdminDashboardServlet GET
+2017-02-28 15:44:30 TRACE AuthorizationFilter:30 - AuthorizationFilter doFilter
+2017-02-28 15:44:30 TRACE RiddlesListServlet:24 - RiddlesListServlet GET
+2017-02-28 15:44:30 TRACE RiddleDAO:25 - Connection to DB in getAllRiddles method
+2017-02-28 15:44:30 TRACE RiddleDAO:31 - Get connection in getAllRiddles method
+2017-02-28 15:44:30 TRACE ConnectionPool:41 - Получаем доступное подключение из пула
+2017-02-28 15:44:30 TRACE ConnectionPool:47 - AvailableConns size != 0
+2017-02-28 15:44:30 TRACE RiddleDAO:64 - Close statement in getAllRiddles method
+2017-02-28 15:44:30 TRACE RiddleDAO:65 - Return connection in getAllUsers method
+2017-02-28 15:44:30 TRACE ConnectionPool:56 - Возвращаем подключение в пулл
+2017-02-28 15:44:34 TRACE AuthorizationFilter:30 - AuthorizationFilter doFilter
+2017-02-28 15:44:34 TRACE RiddleDAO:74 - Connection to DB in registration method
+2017-02-28 15:44:34 TRACE RiddleDAO:82 - Get connection in registrationUser method
+2017-02-28 15:44:34 TRACE ConnectionPool:41 - Получаем доступное подключение из пула
+2017-02-28 15:44:34 TRACE ConnectionPool:47 - AvailableConns size != 0
+2017-02-28 15:44:34 ERROR RiddleDAO:109 - com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Unknown column 'id' in 'where clause'
+2017-02-28 15:44:34 TRACE RiddleDAO:117 - Close PreparedStatement in registrationUser method
+2017-02-28 15:44:34 TRACE RiddleDAO:118 - Return connection in registrationUser method
+2017-02-28 15:44:34 TRACE ConnectionPool:56 - Возвращаем подключение в пулл
+2017-02-28 15:44:34 ERROR RiddleEditServlet:32 - common.exceptions.RiddleDaoException
+2017-02-28 15:44:41 TRACE AuthorizationFilter:30 - AuthorizationFilter doFilter
+2017-02-28 15:44:41 TRACE RiddlesListServlet:24 - RiddlesListServlet GET
+2017-02-28 15:44:41 TRACE RiddleDAO:25 - Connection to DB in getAllRiddles method
+2017-02-28 15:44:41 TRACE RiddleDAO:31 - Get connection in getAllRiddles method
+2017-02-28 15:44:41 TRACE ConnectionPool:41 - Получаем доступное подключение из пула
+2017-02-28 15:44:41 TRACE ConnectionPool:47 - AvailableConns size != 0
+2017-02-28 15:44:41 TRACE RiddleDAO:64 - Close statement in getAllRiddles method
+2017-02-28 15:44:41 TRACE RiddleDAO:65 - Return connection in getAllUsers method
+2017-02-28 15:44:41 TRACE ConnectionPool:56 - Возвращаем подключение в пулл
+2017-02-28 15:44:43 TRACE AuthorizationFilter:30 - AuthorizationFilter doFilter
+2017-02-28 15:44:43 TRACE RiddleDAO:74 - Connection to DB in registration method
+2017-02-28 15:44:43 TRACE RiddleDAO:82 - Get connection in registrationUser method
+2017-02-28 15:44:43 TRACE ConnectionPool:41 - Получаем доступное подключение из пула
+2017-02-28 15:44:43 TRACE ConnectionPool:47 - AvailableConns size != 0
+2017-02-28 15:44:43 ERROR RiddleDAO:109 - com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Unknown column 'id' in 'where clause'
+2017-02-28 15:44:43 TRACE RiddleDAO:117 - Close PreparedStatement in registrationUser method
+2017-02-28 15:44:43 TRACE RiddleDAO:118 - Return connection in registrationUser method
+2017-02-28 15:44:43 TRACE ConnectionPool:56 - Возвращаем подключение в пулл
+2017-02-28 15:44:43 ERROR RiddleEditServlet:32 - common.exceptions.RiddleDaoException
+2017-02-28 15:44:46 TRACE AuthorizationFilter:30 - AuthorizationFilter doFilter
+2017-02-28 15:44:46 TRACE RiddlesListServlet:24 - RiddlesListServlet GET
+2017-02-28 15:44:46 TRACE RiddleDAO:25 - Connection to DB in getAllRiddles method
+2017-02-28 15:44:46 TRACE RiddleDAO:31 - Get connection in getAllRiddles method
+2017-02-28 15:44:46 TRACE ConnectionPool:41 - Получаем доступное подключение из пула
+2017-02-28 15:44:46 TRACE ConnectionPool:47 - AvailableConns size != 0
+2017-02-28 15:44:46 TRACE RiddleDAO:64 - Close statement in getAllRiddles method
+2017-02-28 15:44:46 TRACE RiddleDAO:65 - Return connection in getAllUsers method
+2017-02-28 15:44:46 TRACE ConnectionPool:56 - Возвращаем подключение в пулл
+2017-02-28 15:44:49 TRACE AuthorizationFilter:30 - AuthorizationFilter doFilter
+2017-02-28 15:44:49 TRACE RiddlesListServlet:24 - RiddlesListServlet GET
+2017-02-28 15:44:49 TRACE RiddleDAO:25 - Connection to DB in getAllRiddles method
+2017-02-28 15:44:49 TRACE RiddleDAO:31 - Get connection in getAllRiddles method
+2017-02-28 15:44:49 TRACE ConnectionPool:41 - Получаем доступное подключение из пула
+2017-02-28 15:44:49 TRACE ConnectionPool:47 - AvailableConns size != 0
+2017-02-28 15:44:49 TRACE RiddleDAO:64 - Close statement in getAllRiddles method
+2017-02-28 15:44:49 TRACE RiddleDAO:65 - Return connection in getAllUsers method
+2017-02-28 15:44:49 TRACE ConnectionPool:56 - Возвращаем подключение в пулл
+2017-02-28 15:44:53 TRACE AuthorizationFilter:30 - AuthorizationFilter doFilter
+2017-02-28 15:44:53 TRACE RiddleDAO:74 - Connection to DB in registration method
+2017-02-28 15:44:53 TRACE RiddleDAO:82 - Get connection in registrationUser method
+2017-02-28 15:44:53 TRACE ConnectionPool:41 - Получаем доступное подключение из пула
+2017-02-28 15:44:53 TRACE ConnectionPool:47 - AvailableConns size != 0
+2017-02-28 15:44:53 ERROR RiddleDAO:109 - com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Unknown column 'id' in 'where clause'
+2017-02-28 15:44:53 TRACE RiddleDAO:117 - Close PreparedStatement in registrationUser method
+2017-02-28 15:44:53 TRACE RiddleDAO:118 - Return connection in registrationUser method
+2017-02-28 15:44:53 TRACE ConnectionPool:56 - Возвращаем подключение в пулл
+2017-02-28 15:44:53 ERROR RiddleEditServlet:32 - common.exceptions.RiddleDaoException
+2017-02-28 15:45:33 TRACE AuthorizationFilter:58 - AuthorizationFilter destroy
+2017-02-28 15:45:34 TRACE AuthorizationFilter:23 - AuthorizationFilter init
+2017-02-28 15:45:38 TRACE AuthorizationFilter:30 - AuthorizationFilter doFilter
+2017-02-28 15:45:38 TRACE LoginServlet:24 - LoginServlet GET
+2017-02-28 15:45:44 TRACE LoginServlet:30 - LoginServlet POST
+2017-02-28 15:45:44 TRACE UserDAO:26 - Connection to DB in getUser method
+2017-02-28 15:45:44 TRACE UserDAO:32 - Get connection in getUser method
+2017-02-28 15:45:44 TRACE ConnectionPool:41 - Получаем доступное подключение из пула
+2017-02-28 15:45:44 TRACE ConnectionPool:44 - AvailableConns size = 0
+2017-02-28 15:45:44 TRACE ConnectionPool:34 - Генерируется новое подключение
+2017-02-28 15:45:44 TRACE UserDAO:45 - Get ResultSet in getUser method
+2017-02-28 15:45:44 TRACE UserDAO:63 - Close PreparedStatement in getUser method
+2017-02-28 15:45:44 TRACE UserDAO:64 - Return connection in getUser method
+2017-02-28 15:45:44 TRACE ConnectionPool:56 - Возвращаем подключение в пулл
+2017-02-28 15:45:44 TRACE UserDAO:68 - Return users - id = 1 login = admin
+2017-02-28 15:45:44 TRACE LoginServlet:40 - authorized and in session set attribute
+2017-02-28 15:45:44 TRACE AuthorizationFilter:30 - AuthorizationFilter doFilter
+2017-02-28 15:45:44 TRACE AdminDashboardServlet:20 - AdminDashboardServlet GET
+2017-02-28 15:45:46 TRACE AuthorizationFilter:30 - AuthorizationFilter doFilter
+2017-02-28 15:45:46 TRACE RiddlesListServlet:24 - RiddlesListServlet GET
+2017-02-28 15:45:46 TRACE RiddleDAO:25 - Connection to DB in getAllRiddles method
+2017-02-28 15:45:46 TRACE RiddleDAO:31 - Get connection in getAllRiddles method
+2017-02-28 15:45:46 TRACE ConnectionPool:41 - Получаем доступное подключение из пула
+2017-02-28 15:45:46 TRACE ConnectionPool:47 - AvailableConns size != 0
+2017-02-28 15:45:46 TRACE RiddleDAO:64 - Close statement in getAllRiddles method
+2017-02-28 15:45:46 TRACE RiddleDAO:65 - Return connection in getAllUsers method
+2017-02-28 15:45:46 TRACE ConnectionPool:56 - Возвращаем подключение в пулл
+2017-02-28 15:45:48 TRACE AuthorizationFilter:30 - AuthorizationFilter doFilter
+2017-02-28 15:45:48 TRACE RiddleDAO:74 - Connection to DB in registration method
+2017-02-28 15:45:48 TRACE RiddleDAO:82 - Get connection in registrationUser method
+2017-02-28 15:45:48 TRACE ConnectionPool:41 - Получаем доступное подключение из пула
+2017-02-28 15:45:48 TRACE ConnectionPool:47 - AvailableConns size != 0
+2017-02-28 15:45:48 DEBUG RiddleDAO:95 - Find riddle by id - 1
+2017-02-28 15:45:48 TRACE RiddleDAO:117 - Close PreparedStatement in registrationUser method
+2017-02-28 15:45:48 TRACE RiddleDAO:118 - Return connection in registrationUser method
+2017-02-28 15:45:48 TRACE ConnectionPool:56 - Возвращаем подключение в пулл
+2017-02-28 15:47:22 TRACE AuthorizationFilter:58 - AuthorizationFilter destroy
+2017-02-28 15:47:23 TRACE AuthorizationFilter:23 - AuthorizationFilter init
+2017-02-28 15:47:28 TRACE AuthorizationFilter:30 - AuthorizationFilter doFilter
+2017-02-28 15:47:28 TRACE LoginServlet:24 - LoginServlet GET
+2017-02-28 15:47:34 TRACE LoginServlet:30 - LoginServlet POST
+2017-02-28 15:47:34 TRACE UserDAO:26 - Connection to DB in getUser method
+2017-02-28 15:47:34 TRACE UserDAO:32 - Get connection in getUser method
+2017-02-28 15:47:34 TRACE ConnectionPool:41 - Получаем доступное подключение из пула
+2017-02-28 15:47:34 TRACE ConnectionPool:44 - AvailableConns size = 0
+2017-02-28 15:47:34 TRACE ConnectionPool:34 - Генерируется новое подключение
+2017-02-28 15:47:34 TRACE UserDAO:45 - Get ResultSet in getUser method
+2017-02-28 15:47:34 TRACE UserDAO:63 - Close PreparedStatement in getUser method
+2017-02-28 15:47:34 TRACE UserDAO:64 - Return connection in getUser method
+2017-02-28 15:47:34 TRACE ConnectionPool:56 - Возвращаем подключение в пулл
+2017-02-28 15:47:34 TRACE UserDAO:68 - Return users - id = 1 login = admin
+2017-02-28 15:47:34 TRACE LoginServlet:40 - authorized and in session set attribute
+2017-02-28 15:47:34 TRACE AuthorizationFilter:30 - AuthorizationFilter doFilter
+2017-02-28 15:47:34 TRACE AdminDashboardServlet:20 - AdminDashboardServlet GET
+2017-02-28 15:47:36 TRACE AuthorizationFilter:30 - AuthorizationFilter doFilter
+2017-02-28 15:47:36 TRACE RiddlesListServlet:24 - RiddlesListServlet GET
+2017-02-28 15:47:36 TRACE RiddleDAO:25 - Connection to DB in getAllRiddles method
+2017-02-28 15:47:36 TRACE RiddleDAO:31 - Get connection in getAllRiddles method
+2017-02-28 15:47:36 TRACE ConnectionPool:41 - Получаем доступное подключение из пула
+2017-02-28 15:47:36 TRACE ConnectionPool:47 - AvailableConns size != 0
+2017-02-28 15:47:36 TRACE RiddleDAO:64 - Close statement in getAllRiddles method
+2017-02-28 15:47:36 TRACE RiddleDAO:65 - Return connection in getAllUsers method
+2017-02-28 15:47:36 TRACE ConnectionPool:56 - Возвращаем подключение в пулл
+2017-02-28 15:47:37 TRACE AuthorizationFilter:30 - AuthorizationFilter doFilter
+2017-02-28 15:47:37 TRACE RiddleDAO:74 - Connection to DB in registration method
+2017-02-28 15:47:37 TRACE RiddleDAO:82 - Get connection in registrationUser method
+2017-02-28 15:47:37 TRACE ConnectionPool:41 - Получаем доступное подключение из пула
+2017-02-28 15:47:37 TRACE ConnectionPool:47 - AvailableConns size != 0
+2017-02-28 15:47:37 DEBUG RiddleDAO:95 - Find riddle by id - 1
+2017-02-28 15:47:37 TRACE RiddleDAO:117 - Close PreparedStatement in registrationUser method
+2017-02-28 15:47:37 TRACE RiddleDAO:118 - Return connection in registrationUser method
+2017-02-28 15:47:37 TRACE ConnectionPool:56 - Возвращаем подключение в пулл
+2017-02-28 15:49:56 TRACE AuthorizationFilter:58 - AuthorizationFilter destroy
+2017-02-28 15:49:56 TRACE AuthorizationFilter:23 - AuthorizationFilter init
+2017-02-28 15:50:24 TRACE AuthorizationFilter:30 - AuthorizationFilter doFilter
+2017-02-28 15:50:24 TRACE LoginServlet:24 - LoginServlet GET
+2017-02-28 15:50:32 TRACE LoginServlet:30 - LoginServlet POST
+2017-02-28 15:50:32 TRACE UserDAO:26 - Connection to DB in getUser method
+2017-02-28 15:50:32 TRACE UserDAO:32 - Get connection in getUser method
+2017-02-28 15:50:32 TRACE ConnectionPool:41 - Получаем доступное подключение из пула
+2017-02-28 15:50:32 TRACE ConnectionPool:44 - AvailableConns size = 0
+2017-02-28 15:50:32 TRACE ConnectionPool:34 - Генерируется новое подключение
+2017-02-28 15:50:33 TRACE UserDAO:45 - Get ResultSet in getUser method
+2017-02-28 15:50:33 TRACE UserDAO:63 - Close PreparedStatement in getUser method
+2017-02-28 15:50:33 TRACE UserDAO:64 - Return connection in getUser method
+2017-02-28 15:50:33 TRACE ConnectionPool:56 - Возвращаем подключение в пулл
+2017-02-28 15:50:33 TRACE UserDAO:68 - Return users - id = 1 login = admin
+2017-02-28 15:50:33 TRACE LoginServlet:40 - authorized and in session set attribute
+2017-02-28 15:50:33 TRACE AuthorizationFilter:30 - AuthorizationFilter doFilter
+2017-02-28 15:50:33 TRACE AdminDashboardServlet:20 - AdminDashboardServlet GET
+2017-02-28 15:50:34 TRACE AuthorizationFilter:30 - AuthorizationFilter doFilter
+2017-02-28 15:50:34 TRACE RiddlesListServlet:24 - RiddlesListServlet GET
+2017-02-28 15:50:34 TRACE RiddleDAO:25 - Connection to DB in getAllRiddles method
+2017-02-28 15:50:34 TRACE RiddleDAO:31 - Get connection in getAllRiddles method
+2017-02-28 15:50:34 TRACE ConnectionPool:41 - Получаем доступное подключение из пула
+2017-02-28 15:50:34 TRACE ConnectionPool:47 - AvailableConns size != 0
+2017-02-28 15:50:34 TRACE RiddleDAO:64 - Close statement in getAllRiddles method
+2017-02-28 15:50:34 TRACE RiddleDAO:65 - Return connection in getAllRiddles method
+2017-02-28 15:50:34 TRACE ConnectionPool:56 - Возвращаем подключение в пулл
+2017-02-28 15:50:35 TRACE AuthorizationFilter:30 - AuthorizationFilter doFilter
+2017-02-28 15:50:35 TRACE RiddleDAO:73 - Connection to DB in registration method
+2017-02-28 15:50:35 TRACE RiddleDAO:81 - Get connection in registrationUser method
+2017-02-28 15:50:35 TRACE ConnectionPool:41 - Получаем доступное подключение из пула
+2017-02-28 15:50:35 TRACE ConnectionPool:47 - AvailableConns size != 0
+2017-02-28 15:50:35 DEBUG RiddleDAO:94 - Find riddle by id - 1
+2017-02-28 15:50:35 TRACE RiddleDAO:116 - Close PreparedStatement in registrationUser method
+2017-02-28 15:50:35 TRACE RiddleDAO:117 - Return connection in registrationUser method
+2017-02-28 15:50:35 TRACE ConnectionPool:56 - Возвращаем подключение в пулл
+2017-02-28 15:50:35 TRACE RiddleEditServlet:28 - 1
+2017-02-28 15:50:35 TRACE RiddleEditServlet:33 - models.pojo.Riddle@52ad92cb
+2017-02-28 15:51:30 TRACE AuthorizationFilter:58 - AuthorizationFilter destroy
+2017-02-28 15:51:30 TRACE AuthorizationFilter:23 - AuthorizationFilter init
+2017-02-28 15:51:34 TRACE AuthorizationFilter:30 - AuthorizationFilter doFilter
+2017-02-28 15:51:34 TRACE LoginServlet:24 - LoginServlet GET
+2017-02-28 15:51:41 TRACE LoginServlet:30 - LoginServlet POST
+2017-02-28 15:51:41 TRACE UserDAO:26 - Connection to DB in getUser method
+2017-02-28 15:51:41 TRACE UserDAO:32 - Get connection in getUser method
+2017-02-28 15:51:41 TRACE ConnectionPool:41 - Получаем доступное подключение из пула
+2017-02-28 15:51:41 TRACE ConnectionPool:44 - AvailableConns size = 0
+2017-02-28 15:51:41 TRACE ConnectionPool:34 - Генерируется новое подключение
+2017-02-28 15:51:41 TRACE UserDAO:45 - Get ResultSet in getUser method
+2017-02-28 15:51:41 TRACE UserDAO:63 - Close PreparedStatement in getUser method
+2017-02-28 15:51:41 TRACE UserDAO:64 - Return connection in getUser method
+2017-02-28 15:51:41 TRACE ConnectionPool:56 - Возвращаем подключение в пулл
+2017-02-28 15:51:41 TRACE UserDAO:68 - Return users - id = 1 login = admin
+2017-02-28 15:51:41 TRACE LoginServlet:40 - authorized and in session set attribute
+2017-02-28 15:51:41 TRACE AuthorizationFilter:30 - AuthorizationFilter doFilter
+2017-02-28 15:51:41 TRACE AdminDashboardServlet:20 - AdminDashboardServlet GET
+2017-02-28 15:51:42 TRACE AuthorizationFilter:30 - AuthorizationFilter doFilter
+2017-02-28 15:51:42 TRACE RiddlesListServlet:24 - RiddlesListServlet GET
+2017-02-28 15:51:42 TRACE RiddleDAO:25 - Connection to DB in getAllRiddles method
+2017-02-28 15:51:42 TRACE RiddleDAO:31 - Get connection in getAllRiddles method
+2017-02-28 15:51:42 TRACE ConnectionPool:41 - Получаем доступное подключение из пула
+2017-02-28 15:51:42 TRACE ConnectionPool:47 - AvailableConns size != 0
+2017-02-28 15:51:42 TRACE RiddleDAO:64 - Close statement in getAllRiddles method
+2017-02-28 15:51:42 TRACE RiddleDAO:65 - Return connection in getAllRiddles method
+2017-02-28 15:51:42 TRACE ConnectionPool:56 - Возвращаем подключение в пулл
+2017-02-28 15:51:44 TRACE AuthorizationFilter:30 - AuthorizationFilter doFilter
+2017-02-28 15:51:44 TRACE RiddleDAO:73 - Connection to DB in getRiddleById method
+2017-02-28 15:51:44 TRACE RiddleDAO:81 - Get connection in getRiddleById method
+2017-02-28 15:51:44 TRACE ConnectionPool:41 - Получаем доступное подключение из пула
+2017-02-28 15:51:44 TRACE ConnectionPool:47 - AvailableConns size != 0
+2017-02-28 15:51:44 DEBUG RiddleDAO:94 - Find riddle by id - 1
+2017-02-28 15:51:44 TRACE RiddleDAO:116 - Close PreparedStatement in getRiddleById method
+2017-02-28 15:51:44 TRACE RiddleDAO:117 - Return connection in getRiddleById method
+2017-02-28 15:51:44 TRACE ConnectionPool:56 - Возвращаем подключение в пулл
+2017-02-28 15:51:44 TRACE RiddleEditServlet:28 - 1
+2017-02-28 15:51:44 TRACE RiddleEditServlet:33 - models.pojo.Riddle@c078d05
+2017-02-28 15:52:04 TRACE AuthorizationFilter:30 - AuthorizationFilter doFilter
+2017-02-28 15:52:04 TRACE RiddlesListServlet:24 - RiddlesListServlet GET
+2017-02-28 15:52:04 TRACE RiddleDAO:25 - Connection to DB in getAllRiddles method
+2017-02-28 15:52:04 TRACE RiddleDAO:31 - Get connection in getAllRiddles method
+2017-02-28 15:52:04 TRACE ConnectionPool:41 - Получаем доступное подключение из пула
+2017-02-28 15:52:04 TRACE ConnectionPool:47 - AvailableConns size != 0
+2017-02-28 15:52:04 TRACE RiddleDAO:64 - Close statement in getAllRiddles method
+2017-02-28 15:52:04 TRACE RiddleDAO:65 - Return connection in getAllRiddles method
+2017-02-28 15:52:04 TRACE ConnectionPool:56 - Возвращаем подключение в пулл
+2017-02-28 15:52:05 TRACE AuthorizationFilter:30 - AuthorizationFilter doFilter
+2017-02-28 15:52:05 TRACE RiddleDAO:73 - Connection to DB in getRiddleById method
+2017-02-28 15:52:05 TRACE RiddleDAO:81 - Get connection in getRiddleById method
+2017-02-28 15:52:05 TRACE ConnectionPool:41 - Получаем доступное подключение из пула
+2017-02-28 15:52:05 TRACE ConnectionPool:47 - AvailableConns size != 0
+2017-02-28 15:52:05 DEBUG RiddleDAO:94 - Find riddle by id - 1
+2017-02-28 15:52:05 TRACE RiddleDAO:116 - Close PreparedStatement in getRiddleById method
+2017-02-28 15:52:05 TRACE RiddleDAO:117 - Return connection in getRiddleById method
+2017-02-28 15:52:05 TRACE ConnectionPool:56 - Возвращаем подключение в пулл
+2017-02-28 15:52:05 TRACE RiddleEditServlet:28 - 1
+2017-02-28 15:52:05 TRACE RiddleEditServlet:33 - models.pojo.Riddle@49b5d22f
+2017-02-28 15:52:06 TRACE AuthorizationFilter:30 - AuthorizationFilter doFilter
+2017-02-28 15:52:06 TRACE RiddlesListServlet:24 - RiddlesListServlet GET
+2017-02-28 15:52:06 TRACE RiddleDAO:25 - Connection to DB in getAllRiddles method
+2017-02-28 15:52:06 TRACE RiddleDAO:31 - Get connection in getAllRiddles method
+2017-02-28 15:52:06 TRACE ConnectionPool:41 - Получаем доступное подключение из пула
+2017-02-28 15:52:06 TRACE ConnectionPool:47 - AvailableConns size != 0
+2017-02-28 15:52:06 TRACE RiddleDAO:64 - Close statement in getAllRiddles method
+2017-02-28 15:52:06 TRACE RiddleDAO:65 - Return connection in getAllRiddles method
+2017-02-28 15:52:06 TRACE ConnectionPool:56 - Возвращаем подключение в пулл
+2017-02-28 15:52:08 TRACE AuthorizationFilter:30 - AuthorizationFilter doFilter
+2017-02-28 15:52:08 TRACE RiddleDAO:73 - Connection to DB in getRiddleById method
+2017-02-28 15:52:08 TRACE RiddleDAO:81 - Get connection in getRiddleById method
+2017-02-28 15:52:08 TRACE ConnectionPool:41 - Получаем доступное подключение из пула
+2017-02-28 15:52:08 TRACE ConnectionPool:47 - AvailableConns size != 0
+2017-02-28 15:52:08 DEBUG RiddleDAO:94 - Find riddle by id - 1
+2017-02-28 15:52:08 TRACE RiddleDAO:116 - Close PreparedStatement in getRiddleById method
+2017-02-28 15:52:08 TRACE RiddleDAO:117 - Return connection in getRiddleById method
+2017-02-28 15:52:08 TRACE ConnectionPool:56 - Возвращаем подключение в пулл
+2017-02-28 15:52:08 TRACE RiddleEditServlet:28 - 1
+2017-02-28 15:52:08 TRACE RiddleEditServlet:33 - models.pojo.Riddle@4221fbcd

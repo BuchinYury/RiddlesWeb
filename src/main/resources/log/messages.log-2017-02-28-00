@@ -1,0 +1,53 @@
+2017-02-28 00:16:40 TRACE AuthorizationFilter:23 - AuthorizationFilter init
+2017-02-28 00:16:43 TRACE AuthorizationFilter:30 - AuthorizationFilter doFilter
+2017-02-28 00:16:43 TRACE LoginServlet:24 - LoginServlet GET
+2017-02-28 00:16:49 TRACE LoginServlet:30 - LoginServlet POST
+2017-02-28 00:16:49 TRACE UserDAO:26 - Connection to DB in getUser method
+2017-02-28 00:16:49 TRACE UserDAO:32 - Get connection in getUser method
+2017-02-28 00:16:49 TRACE ConnectionPool:41 - Получаем доступное подключение из пула
+2017-02-28 00:16:49 TRACE ConnectionPool:44 - AvailableConns size = 0
+2017-02-28 00:16:49 TRACE ConnectionPool:34 - Генерируется новое подключение
+2017-02-28 00:16:49 TRACE UserDAO:45 - Get ResultSet in getUser method
+2017-02-28 00:16:49 TRACE UserDAO:63 - Close PreparedStatement in getUser method
+2017-02-28 00:16:49 TRACE UserDAO:64 - Return connection in getUser method
+2017-02-28 00:16:49 TRACE ConnectionPool:56 - Возвращаем подключение в пулл
+2017-02-28 00:16:49 TRACE UserDAO:68 - Return users - id = 1 login = admin
+2017-02-28 00:16:49 TRACE LoginServlet:40 - authorized and in session set attribute
+2017-02-28 00:16:49 TRACE AuthorizationFilter:30 - AuthorizationFilter doFilter
+2017-02-28 00:16:49 TRACE AdminDashboardServlet:20 - AdminDashboardServlet GET
+2017-02-28 00:16:50 TRACE AuthorizationFilter:30 - AuthorizationFilter doFilter
+2017-02-28 00:16:50 TRACE RiddlesListServlet:23 - RiddlesListServlet GET
+2017-02-28 00:16:50 TRACE RiddleDAO:27 - Connection to DB in getAllRiddles method
+2017-02-28 00:16:50 TRACE RiddleDAO:33 - Get connection in getAllRiddles method
+2017-02-28 00:16:50 TRACE ConnectionPool:41 - Получаем доступное подключение из пула
+2017-02-28 00:16:50 TRACE ConnectionPool:47 - AvailableConns size != 0
+2017-02-28 00:16:50 TRACE RiddleDAO:66 - Close statement in getAllRiddles method
+2017-02-28 00:16:50 TRACE RiddleDAO:67 - Return connection in getAllUsers method
+2017-02-28 00:16:50 TRACE ConnectionPool:56 - Возвращаем подключение в пулл
+2017-02-28 00:19:23 TRACE AuthorizationFilter:58 - AuthorizationFilter destroy
+2017-02-28 00:19:23 TRACE AuthorizationFilter:23 - AuthorizationFilter init
+2017-02-28 00:19:29 TRACE AuthorizationFilter:30 - AuthorizationFilter doFilter
+2017-02-28 00:19:29 TRACE LoginServlet:24 - LoginServlet GET
+2017-02-28 00:19:35 TRACE LoginServlet:30 - LoginServlet POST
+2017-02-28 00:19:35 TRACE UserDAO:26 - Connection to DB in getUser method
+2017-02-28 00:19:35 TRACE UserDAO:32 - Get connection in getUser method
+2017-02-28 00:19:35 TRACE ConnectionPool:41 - Получаем доступное подключение из пула
+2017-02-28 00:19:35 TRACE ConnectionPool:44 - AvailableConns size = 0
+2017-02-28 00:19:35 TRACE ConnectionPool:34 - Генерируется новое подключение
+2017-02-28 00:19:35 TRACE UserDAO:45 - Get ResultSet in getUser method
+2017-02-28 00:19:35 TRACE UserDAO:63 - Close PreparedStatement in getUser method
+2017-02-28 00:19:35 TRACE UserDAO:64 - Return connection in getUser method
+2017-02-28 00:19:35 TRACE ConnectionPool:56 - Возвращаем подключение в пулл
+2017-02-28 00:19:35 TRACE UserDAO:68 - Return users - id = 1 login = admin
+2017-02-28 00:19:35 TRACE LoginServlet:40 - authorized and in session set attribute
+2017-02-28 00:19:35 TRACE AuthorizationFilter:30 - AuthorizationFilter doFilter
+2017-02-28 00:19:35 TRACE AdminDashboardServlet:20 - AdminDashboardServlet GET
+2017-02-28 00:19:36 TRACE AuthorizationFilter:30 - AuthorizationFilter doFilter
+2017-02-28 00:19:36 TRACE RiddlesListServlet:23 - RiddlesListServlet GET
+2017-02-28 00:19:36 TRACE RiddleDAO:27 - Connection to DB in getAllRiddles method
+2017-02-28 00:19:36 TRACE RiddleDAO:33 - Get connection in getAllRiddles method
+2017-02-28 00:19:36 TRACE ConnectionPool:41 - Получаем доступное подключение из пула
+2017-02-28 00:19:36 TRACE ConnectionPool:47 - AvailableConns size != 0
+2017-02-28 00:19:36 TRACE RiddleDAO:66 - Close statement in getAllRiddles method
+2017-02-28 00:19:36 TRACE RiddleDAO:67 - Return connection in getAllUsers method
+2017-02-28 00:19:36 TRACE ConnectionPool:56 - Возвращаем подключение в пулл

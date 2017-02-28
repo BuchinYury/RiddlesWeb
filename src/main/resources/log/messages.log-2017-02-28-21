@@ -1,0 +1,28 @@
+2017-02-28 21:08:04 TRACE AuthorizationFilter:30 - AuthorizationFilter doFilter
+2017-02-28 21:08:04 TRACE LoginServlet:24 - LoginServlet GET
+2017-02-28 21:08:05 TRACE AuthorizationFilter:30 - AuthorizationFilter doFilter
+2017-02-28 21:08:06 TRACE AuthorizationFilter:30 - AuthorizationFilter doFilter
+2017-02-28 21:08:13 TRACE LoginServlet:24 - LoginServlet GET
+2017-02-28 21:15:12 TRACE AuthorizationFilter:58 - AuthorizationFilter destroy
+2017-02-28 21:15:14 TRACE AuthorizationFilter:23 - AuthorizationFilter init
+2017-02-28 21:15:27 TRACE LoginServlet:24 - LoginServlet GET
+2017-02-28 21:15:32 TRACE LoginServlet:30 - LoginServlet POST
+2017-02-28 21:15:32 TRACE UserDAO:27 - Connection to DB in getUser method
+2017-02-28 21:15:32 TRACE UserDAO:33 - Get connection in getUser method
+2017-02-28 21:15:32 TRACE ConnectionPool:41 - Получаем доступное подключение из пула
+2017-02-28 21:15:32 TRACE ConnectionPool:44 - AvailableConns size = 0
+2017-02-28 21:15:32 TRACE ConnectionPool:34 - Генерируется новое подключение
+2017-02-28 21:15:33 TRACE UserDAO:46 - Get ResultSet in getUser method
+2017-02-28 21:15:33 TRACE UserDAO:65 - Close PreparedStatement in getUser method
+2017-02-28 21:15:33 TRACE UserDAO:66 - Return connection in getUser method
+2017-02-28 21:15:33 TRACE ConnectionPool:56 - Возвращаем подключение в пулл
+2017-02-28 21:15:33 TRACE UserDAO:70 - Return users - id = 1 login = admin
+2017-02-28 21:15:33 TRACE LoginServlet:40 - authorized and in session set attribute
+2017-02-28 21:15:33 TRACE NotificationListener:20 - NotificationListener attribute added
+2017-02-28 21:15:33 TRACE NotificationListener:20 - NotificationListener attribute added
+2017-02-28 21:15:33 TRACE AuthorizationFilter:30 - AuthorizationFilter doFilter
+2017-02-28 21:15:33 TRACE AdminDashboardServlet:20 - AdminDashboardServlet GET
+2017-02-28 21:38:35 TRACE AuthorizationFilter:30 - AuthorizationFilter doFilter
+2017-02-28 21:38:35 TRACE AdminDashboardServlet:20 - AdminDashboardServlet GET
+2017-02-28 21:38:37 TRACE LoginServlet:24 - LoginServlet GET
+2017-02-28 21:38:40 TRACE RegistrationServlet:21 - RegistrationServlet GET
