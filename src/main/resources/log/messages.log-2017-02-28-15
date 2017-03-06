@@ -36,7 +36,7 @@
 2017-02-28 15:44:34 TRACE RiddleDAO:117 - Close PreparedStatement in registrationUser method
 2017-02-28 15:44:34 TRACE RiddleDAO:118 - Return connection in registrationUser method
 2017-02-28 15:44:34 TRACE ConnectionPool:56 - Возвращаем подключение в пулл
-2017-02-28 15:44:34 ERROR RiddleEditServlet:32 - common.exceptions.RiddleDaoException
+2017-02-28 15:44:34 ERROR RiddleEditServlet:32 - io.buchin.common.exceptions.RiddleDaoException
 2017-02-28 15:44:41 TRACE AuthorizationFilter:30 - AuthorizationFilter doFilter
 2017-02-28 15:44:41 TRACE RiddlesListServlet:24 - RiddlesListServlet GET
 2017-02-28 15:44:41 TRACE RiddleDAO:25 - Connection to DB in getAllRiddles method
@@ -55,7 +55,7 @@
 2017-02-28 15:44:43 TRACE RiddleDAO:117 - Close PreparedStatement in registrationUser method
 2017-02-28 15:44:43 TRACE RiddleDAO:118 - Return connection in registrationUser method
 2017-02-28 15:44:43 TRACE ConnectionPool:56 - Возвращаем подключение в пулл
-2017-02-28 15:44:43 ERROR RiddleEditServlet:32 - common.exceptions.RiddleDaoException
+2017-02-28 15:44:43 ERROR RiddleEditServlet:32 - io.buchin.common.exceptions.RiddleDaoException
 2017-02-28 15:44:46 TRACE AuthorizationFilter:30 - AuthorizationFilter doFilter
 2017-02-28 15:44:46 TRACE RiddlesListServlet:24 - RiddlesListServlet GET
 2017-02-28 15:44:46 TRACE RiddleDAO:25 - Connection to DB in getAllRiddles method
@@ -83,7 +83,7 @@
 2017-02-28 15:44:53 TRACE RiddleDAO:117 - Close PreparedStatement in registrationUser method
 2017-02-28 15:44:53 TRACE RiddleDAO:118 - Return connection in registrationUser method
 2017-02-28 15:44:53 TRACE ConnectionPool:56 - Возвращаем подключение в пулл
-2017-02-28 15:44:53 ERROR RiddleEditServlet:32 - common.exceptions.RiddleDaoException
+2017-02-28 15:44:53 ERROR RiddleEditServlet:32 - io.buchin.common.exceptions.RiddleDaoException
 2017-02-28 15:45:33 TRACE AuthorizationFilter:58 - AuthorizationFilter destroy
 2017-02-28 15:45:34 TRACE AuthorizationFilter:23 - AuthorizationFilter init
 2017-02-28 15:45:38 TRACE AuthorizationFilter:30 - AuthorizationFilter doFilter
@@ -193,7 +193,7 @@
 2017-02-28 15:50:35 TRACE RiddleDAO:117 - Return connection in registrationUser method
 2017-02-28 15:50:35 TRACE ConnectionPool:56 - Возвращаем подключение в пулл
 2017-02-28 15:50:35 TRACE RiddleEditServlet:28 - 1
-2017-02-28 15:50:35 TRACE RiddleEditServlet:33 - models.pojo.Riddle@52ad92cb
+2017-02-28 15:50:35 TRACE RiddleEditServlet:33 - io.buchin.models.pojo.Riddle@52ad92cb
 2017-02-28 15:51:30 TRACE AuthorizationFilter:58 - AuthorizationFilter destroy
 2017-02-28 15:51:30 TRACE AuthorizationFilter:23 - AuthorizationFilter init
 2017-02-28 15:51:34 TRACE AuthorizationFilter:30 - AuthorizationFilter doFilter
@@ -231,7 +231,7 @@
 2017-02-28 15:51:44 TRACE RiddleDAO:117 - Return connection in getRiddleById method
 2017-02-28 15:51:44 TRACE ConnectionPool:56 - Возвращаем подключение в пулл
 2017-02-28 15:51:44 TRACE RiddleEditServlet:28 - 1
-2017-02-28 15:51:44 TRACE RiddleEditServlet:33 - models.pojo.Riddle@c078d05
+2017-02-28 15:51:44 TRACE RiddleEditServlet:33 - io.buchin.models.pojo.Riddle@c078d05
 2017-02-28 15:52:04 TRACE AuthorizationFilter:30 - AuthorizationFilter doFilter
 2017-02-28 15:52:04 TRACE RiddlesListServlet:24 - RiddlesListServlet GET
 2017-02-28 15:52:04 TRACE RiddleDAO:25 - Connection to DB in getAllRiddles method
@@ -251,7 +251,7 @@
 2017-02-28 15:52:05 TRACE RiddleDAO:117 - Return connection in getRiddleById method
 2017-02-28 15:52:05 TRACE ConnectionPool:56 - Возвращаем подключение в пулл
 2017-02-28 15:52:05 TRACE RiddleEditServlet:28 - 1
-2017-02-28 15:52:05 TRACE RiddleEditServlet:33 - models.pojo.Riddle@49b5d22f
+2017-02-28 15:52:05 TRACE RiddleEditServlet:33 - io.buchin.models.pojo.Riddle@49b5d22f
 2017-02-28 15:52:06 TRACE AuthorizationFilter:30 - AuthorizationFilter doFilter
 2017-02-28 15:52:06 TRACE RiddlesListServlet:24 - RiddlesListServlet GET
 2017-02-28 15:52:06 TRACE RiddleDAO:25 - Connection to DB in getAllRiddles method
@@ -271,4 +271,4 @@
 2017-02-28 15:52:08 TRACE RiddleDAO:117 - Return connection in getRiddleById method
 2017-02-28 15:52:08 TRACE ConnectionPool:56 - Возвращаем подключение в пулл
 2017-02-28 15:52:08 TRACE RiddleEditServlet:28 - 1
-2017-02-28 15:52:08 TRACE RiddleEditServlet:33 - models.pojo.Riddle@4221fbcd
+2017-02-28 15:52:08 TRACE RiddleEditServlet:33 - io.buchin.models.pojo.Riddle@4221fbcd

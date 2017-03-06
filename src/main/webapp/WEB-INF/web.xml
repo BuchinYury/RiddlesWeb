@@ -8,13 +8,24 @@
         <!--<welcome-file>login.jsp</welcome-file>-->
     <!--</welcome-file-list>-->
 
+    <!-- Creates the Spring Container shared by all Servlets and Filters -->
     <listener>
-        <listener-class>controllers.listeners.NotificationListener</listener-class>
+        <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+    </listener>
+
+    <context-param>
+        <param-name>contextConfigLocation</param-name>
+        <param-value>/WEB-INF/beans.xml</param-value>
+    </context-param>
+
+
+    <listener>
+        <listener-class>io.buchin.controllers.listeners.NotificationListener</listener-class>
     </listener>
 
     <filter>
         <filter-name>AuthorizationFilter</filter-name>
-        <filter-class>controllers.filters.AuthorizationFilter</filter-class>
+        <filter-class>io.buchin.controllers.filters.AuthorizationFilter</filter-class>
     </filter>
     <filter-mapping>
         <filter-name>AuthorizationFilter</filter-name>
@@ -23,11 +34,12 @@
         <url-pattern>/usersList</url-pattern>
         <url-pattern>/riddlesList</url-pattern>
         <url-pattern>/editRiddle</url-pattern>
+        <url-pattern>/logout</url-pattern>
     </filter-mapping>
 
     <servlet>
         <servlet-name>Login</servlet-name>
-        <servlet-class>controllers.servlets.common.LoginServlet</servlet-class>
+        <servlet-class>io.buchin.controllers.servlets.common.LoginServlet</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>Login</servlet-name>
@@ -35,8 +47,17 @@
     </servlet-mapping>
 
     <servlet>
+        <servlet-name>Logout</servlet-name>
+        <servlet-class>io.buchin.controllers.servlets.common.LogoutServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Logout</servlet-name>
+        <url-pattern>/logout</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
         <servlet-name>Registration</servlet-name>
-        <servlet-class>controllers.servlets.common.RegistrationServlet</servlet-class>
+        <servlet-class>io.buchin.controllers.servlets.common.RegistrationServlet</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>Registration</servlet-name>
@@ -45,7 +66,7 @@
 
     <servlet>
         <servlet-name>UserDashboard</servlet-name>
-        <servlet-class>controllers.servlets.dashboards.UserDashboardServlet</servlet-class>
+        <servlet-class>io.buchin.controllers.servlets.dashboards.UserDashboardServlet</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>UserDashboard</servlet-name>
@@ -54,7 +75,7 @@
 
     <servlet>
         <servlet-name>AdminDashboard</servlet-name>
-        <servlet-class>controllers.servlets.dashboards.AdminDashboardServlet</servlet-class>
+        <servlet-class>io.buchin.controllers.servlets.dashboards.AdminDashboardServlet</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>AdminDashboard</servlet-name>
@@ -63,7 +84,7 @@
 
     <servlet>
         <servlet-name>UsersList</servlet-name>
-        <servlet-class>controllers.servlets.lists.UsersListServlet</servlet-class>
+        <servlet-class>io.buchin.controllers.servlets.lists.UsersListServlet</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>UsersList</servlet-name>
@@ -72,7 +93,7 @@
     
     <servlet>
         <servlet-name>RiddlesList</servlet-name>
-        <servlet-class>controllers.servlets.lists.RiddlesListServlet</servlet-class>
+        <servlet-class>io.buchin.controllers.servlets.lists.RiddlesListServlet</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>RiddlesList</servlet-name>
@@ -81,7 +102,7 @@
 
     <servlet>
         <servlet-name>RiddlesEdit</servlet-name>
-        <servlet-class>controllers.servlets.edits.RiddleEditServlet</servlet-class>
+        <servlet-class>io.buchin.controllers.servlets.edits.RiddleEditServlet</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>RiddlesEdit</servlet-name>
@@ -89,6 +110,6 @@
     </servlet-mapping>
 
     <!--<listener>-->
-        <!--<listener-class>controllers.listener.AplicationLoadListener</listener-class>-->
+        <!--<listener-class>io.buchin.controllers.listener.AplicationLoadListener</listener-class>-->
     <!--</listener>-->
 </web-app>
