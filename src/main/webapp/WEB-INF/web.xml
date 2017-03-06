@@ -8,7 +8,7 @@
         <!--<welcome-file>login.jsp</welcome-file>-->
     <!--</welcome-file-list>-->
 
-    <!-- Creates the Spring Container shared by all Servlets and Filters -->
+     <!--Creates the Spring Container shared by all Servlets and Filters-->
     <listener>
         <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
     </listener>
@@ -112,4 +112,5 @@
     <!--<listener>-->
         <!--<listener-class>io.buchin.controllers.listener.AplicationLoadListener</listener-class>-->
     <!--</listener>-->
+
 </web-app>
