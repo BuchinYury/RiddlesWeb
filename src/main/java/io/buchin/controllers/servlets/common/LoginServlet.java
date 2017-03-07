@@ -1,10 +1,14 @@
 package io.buchin.controllers.servlets.common;
 
 import io.buchin.common.exceptions.UserDaoException;
+import io.buchin.controllers.servlets.FatherServlets;
 import io.buchin.models.pojo.User;
 import org.apache.log4j.Logger;
 import io.buchin.services.UserService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.context.support.SpringBeanAutowiringSupport;
 
+import javax.servlet.ServletConfig;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -16,8 +20,11 @@ import java.io.IOException;
 /**
  * Created by yuri on 23.02.17.
  */
-public class LoginServlet extends HttpServlet {
+public class LoginServlet extends FatherServlets {
     private static Logger logger = Logger.getLogger(LoginServlet.class);
+
+    @Autowired
+    private UserService userService;
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -34,7 +41,7 @@ public class LoginServlet extends HttpServlet {
         HttpSession session = req.getSession();
 
         try {
-            User user = UserService.authorize(login, password);
+            User user = userService.authorize(login, password);
 
             if (user.getIdUser() != 0) {
                 logger.trace("authorized and in session set attribute");
@@ -44,8 +51,8 @@ public class LoginServlet extends HttpServlet {
                 session.setAttribute("admin", user.isAdminTrue());
 
                 if (user.isAdminTrue()) {
-                    session.setAttribute("mailTo", user);
-                    session.setAttribute("notification", user.isNotification());
+//                    session.setAttribute("mailTo", user);
+//                    session.setAttribute("notification", user.isNotification());
                     resp.sendRedirect("/adminDashboard");
                 }
                 else resp.sendRedirect("/userDashboard");

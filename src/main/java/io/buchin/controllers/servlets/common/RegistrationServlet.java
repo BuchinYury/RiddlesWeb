@@ -1,8 +1,10 @@
 package io.buchin.controllers.servlets.common;
 
 import io.buchin.common.exceptions.UserDaoException;
+import io.buchin.controllers.servlets.FatherServlets;
 import org.apache.log4j.Logger;
 import io.buchin.services.UserService;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -13,8 +15,11 @@ import java.io.IOException;
 /**
  * Created by yuri on 24.02.17.
  */
-public class RegistrationServlet extends HttpServlet {
+public class RegistrationServlet extends FatherServlets {
     private static Logger logger = Logger.getLogger(RegistrationServlet.class);
+
+    @Autowired
+    private UserService userService;
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -33,7 +38,7 @@ public class RegistrationServlet extends HttpServlet {
         String email = req.getParameter("email");
 
         try {
-            if (UserService.registration(login, pass, userName, email)) {
+            if (userService.registration(login, pass, userName, email)) {
                 logger.trace("Зарегистрирован новый пользователь");
                 resp.sendRedirect("/login");
             } else {

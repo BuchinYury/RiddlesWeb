@@ -1,5 +1,6 @@
 package io.buchin.controllers.servlets.dashboards;
 
+import io.buchin.controllers.servlets.FatherServlets;
 import org.apache.log4j.Logger;
 import org.springframework.web.context.support.SpringBeanAutowiringSupport;
 
@@ -14,7 +15,7 @@ import java.io.IOException;
 /**
  * Created by yuri on 26.02.17.
  */
-public class UserDashboardServlet extends HttpServlet {
+public class UserDashboardServlet extends FatherServlets {
     private static Logger logger = Logger.getLogger(UserDashboardServlet.class);
 
     @Override

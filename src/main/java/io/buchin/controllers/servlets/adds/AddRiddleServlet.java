@@ -1,5 +1,7 @@
 package io.buchin.controllers.servlets.adds;
 
+import io.buchin.controllers.servlets.FatherServlets;
+
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -9,7 +11,7 @@ import java.io.IOException;
 /**
  * Created by yuri on 28.02.17.
  */
-public class AddRiddleServlet extends HttpServlet {
+public class AddRiddleServlet extends FatherServlets {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         super.doGet(req, resp);

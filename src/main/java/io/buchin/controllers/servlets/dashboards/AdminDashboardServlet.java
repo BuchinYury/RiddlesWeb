@@ -1,8 +1,10 @@
 package io.buchin.controllers.servlets.dashboards;
 
 import io.buchin.common.exceptions.UserDaoException;
+import io.buchin.controllers.servlets.FatherServlets;
 import org.apache.log4j.Logger;
 import io.buchin.services.UserService;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -14,8 +16,11 @@ import java.io.IOException;
 /**
  * Created by yuri on 26.02.17.
  */
-public class AdminDashboardServlet extends HttpServlet {
+public class AdminDashboardServlet extends FatherServlets {
     private static Logger logger = Logger.getLogger(AdminDashboardServlet.class);
+
+    @Autowired
+    private UserService userService;
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -50,11 +55,11 @@ public class AdminDashboardServlet extends HttpServlet {
 
         try {
             if (isNotification){
-                UserService.sendNotification(id, 1);
+                userService.sendNotification(id, 1);
                 session.setAttribute("notification", true);
             }
             else {
-                UserService.sendNotification(id, 0);
+                userService.sendNotification(id, 0);
                 session.setAttribute("notification", false);
             }
 

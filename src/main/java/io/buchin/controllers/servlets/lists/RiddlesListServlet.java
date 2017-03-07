@@ -1,9 +1,11 @@
 package io.buchin.controllers.servlets.lists;
 
 import io.buchin.common.exceptions.RiddleDaoException;
+import io.buchin.controllers.servlets.FatherServlets;
 import io.buchin.models.pojo.Riddle;
 import org.apache.log4j.Logger;
 import io.buchin.services.RiddleService;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -15,8 +17,11 @@ import java.util.List;
 /**
  * Created by yuri on 27.02.17.
  */
-public class RiddlesListServlet extends HttpServlet {
+public class RiddlesListServlet extends FatherServlets {
     private static Logger logger = Logger.getLogger(RiddlesListServlet.class);
+
+    @Autowired
+    private RiddleService riddleService;
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -24,7 +29,7 @@ public class RiddlesListServlet extends HttpServlet {
 
         List<Riddle> riddlesList = null;
         try {
-            riddlesList = RiddleService.getAllRiddles();
+            riddlesList = riddleService.getAllRiddles();
         } catch (RiddleDaoException e) {
             logger.error(e);
             resp.sendRedirect("/error.jsp");

@@ -13,8 +13,6 @@ import javax.servlet.http.HttpSessionBindingEvent;
 public class NotificationListener implements HttpSessionAttributeListener {
     private static Logger logger = Logger.getLogger(NotificationListener.class);
 
-
-
     @Override
     public void attributeAdded(HttpSessionBindingEvent event) {
         logger.trace("NotificationListener attribute added " + event.getName() + " - " + event.getValue());

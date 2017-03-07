@@ -1,9 +1,11 @@
 package io.buchin.controllers.servlets.edits;
 
 import io.buchin.common.exceptions.RiddleDaoException;
+import io.buchin.controllers.servlets.FatherServlets;
 import io.buchin.models.pojo.Riddle;
 import org.apache.log4j.Logger;
 import io.buchin.services.RiddleService;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -14,8 +16,11 @@ import java.io.IOException;
 /**
  * Created by yuri on 28.02.17.
  */
-public class RiddleEditServlet extends HttpServlet {
+public class RiddleEditServlet extends FatherServlets {
     private static Logger logger = Logger.getLogger(RiddleEditServlet.class);
+
+    @Autowired
+    private RiddleService riddleService;
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -26,7 +31,7 @@ public class RiddleEditServlet extends HttpServlet {
         Riddle riddle = null;
 
         try {
-            riddle = RiddleService.getRiddleById(id);
+            riddle = riddleService.getRiddleById(id);
             logger.trace(riddle.getIdRiddle());
         } catch (RiddleDaoException e) {
             logger.error(e);
@@ -57,8 +62,8 @@ public class RiddleEditServlet extends HttpServlet {
         boolean isBlock = Boolean.parseBoolean(strIsBlock);
 
         try {
-            if (isBlock) RiddleService.blockOrUnblockRiddle(id, 0);
-            else RiddleService.blockOrUnblockRiddle(id, 1);
+            if (isBlock) riddleService.blockOrUnblockRiddle(id, 0);
+            else riddleService.blockOrUnblockRiddle(id, 1);
 
         } catch (RiddleDaoException e) {
             logger.error(e);

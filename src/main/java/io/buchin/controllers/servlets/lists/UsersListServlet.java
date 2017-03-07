@@ -2,9 +2,11 @@ package io.buchin.controllers.servlets.lists;
 
 
 import io.buchin.common.exceptions.UserDaoException;
+import io.buchin.controllers.servlets.FatherServlets;
 import io.buchin.models.pojo.User;
 import org.apache.log4j.Logger;
 import io.buchin.services.UserService;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -16,8 +18,11 @@ import java.util.List;
 /**
  * Created by yuri on 25.02.17.
  */
-public class UsersListServlet extends HttpServlet {
+public class UsersListServlet extends FatherServlets {
     private static Logger logger = Logger.getLogger(UsersListServlet.class);
+
+    @Autowired
+    private UserService userService;
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -25,7 +30,7 @@ public class UsersListServlet extends HttpServlet {
 
         List<User> usersList = null;
         try {
-            usersList = UserService.getAllUsers();
+            usersList = userService.getAllUsers();
         } catch (UserDaoException e) {
             logger.error(e);
             resp.sendRedirect("/error.jsp");

@@ -4,6 +4,7 @@ import io.buchin.common.exceptions.RiddleDaoException;
 import io.buchin.models.connector.DBConst;
 import io.buchin.models.pojo.Riddle;
 import org.apache.log4j.Logger;
+import org.springframework.stereotype.Repository;
 
 import java.sql.*;
 import java.util.ArrayList;
@@ -12,6 +13,8 @@ import java.util.List;
 /**
  * Created by yuri on 25.02.17.
  */
+
+@Repository
 public class RiddleDAO {
     private static Logger logger = Logger.getLogger(RiddleDAO.class);
 
@@ -19,7 +22,7 @@ public class RiddleDAO {
     private static final String SQL_FIND_RIDDLE = "SELECT * FROM riddles WHERE id_riddle = ?";
     private static final String SQL_UPDATE_RIDDLE = "UPDATE riddles SET block_true = ? WHERE id_riddle = ?";
 
-    public static List<Riddle> getAllRiddles() throws RiddleDaoException {
+    public List<Riddle> getAllRiddles() throws RiddleDaoException {
         List<Riddle> riddlesList = new ArrayList<>();
 
         logger.trace("Connection to DB in getAllRiddles method");
@@ -72,7 +75,7 @@ public class RiddleDAO {
         return riddlesList;
     }
 
-    public static Riddle getRiddleById(int id) throws RiddleDaoException {
+    public Riddle getRiddleById(int id) throws RiddleDaoException {
         logger.trace("Connection to DB in getRiddleById method");
 
         Riddle riddle = new Riddle();
@@ -127,7 +130,7 @@ public class RiddleDAO {
         return riddle;
     }
 
-    public static void blockOrUnblockRiddle(int id, int block) throws RiddleDaoException {
+    public void blockOrUnblockRiddle(int id, int block) throws RiddleDaoException {
         logger.trace("Connection to DB in blockOrUnblockRiddle method");
 
         Connection connPuts = null;
