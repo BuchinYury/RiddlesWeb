@@ -25,7 +25,6 @@ public class UserDAO {
     private static final String SQL_ALL_USER = "SELECT * FROM users";
     private static final String SQL_UPDATE_RIDDLE = "UPDATE users SET notification = ? WHERE id_user = ?";
 
-
     public User getUserByLoginAndPassword(String login, String password) throws UserDaoException {
         User user = new User();
         logger.trace("Connection to DB in getUser method");

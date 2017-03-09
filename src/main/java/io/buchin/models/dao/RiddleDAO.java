@@ -20,7 +20,9 @@ public class RiddleDAO {
 
     private static final String SQL_ALL_RIDDLE = "SELECT * FROM riddles";
     private static final String SQL_FIND_RIDDLE = "SELECT * FROM riddles WHERE id_riddle = ?";
-    private static final String SQL_UPDATE_RIDDLE = "UPDATE riddles SET block_true = ? WHERE id_riddle = ?";
+    private static final String SQL_BLOCK_RIDDLE = "UPDATE riddles SET block_true = ? WHERE id_riddle = ?";
+    private static final String SQL_ADD_RIDDLE = "INSERT INTO riddles (short_name, text_riddle, answer, level, category, id_user) VALUES(?,?,?,?,?,?)";
+    private static final String SQL_UPDATE_RIDDLE = "UPDATE riddles SET short_name = ?, text_riddle = ?, answer = ?, level = ?, category = ? WHERE id_riddle = ?";
 
     public List<Riddle> getAllRiddles() throws RiddleDaoException {
         List<Riddle> riddlesList = new ArrayList<>();
@@ -140,7 +142,7 @@ public class RiddleDAO {
             logger.trace("Get connection in blockOrUnblockRiddle method");
 
             Connection conn = DBConst.connectionPool.retrieve();
-            PreparedStatement preparedStatement = conn.prepareStatement(SQL_UPDATE_RIDDLE);
+            PreparedStatement preparedStatement = conn.prepareStatement(SQL_BLOCK_RIDDLE);
 
             connPuts = conn;
             closePS = preparedStatement;
@@ -163,5 +165,92 @@ public class RiddleDAO {
             logger.trace("Return connection in blockOrUnblockRiddle method");
             if (connPuts != null) DBConst.connectionPool.putback(connPuts);
         }
+    }
+
+    public void addRiddle(int id, Riddle riddle) throws RiddleDaoException {
+        logger.trace("Connection to DB in addRiddle method");
+
+        Connection connPuts = null;
+        PreparedStatement closePS = null;
+
+        try {
+            logger.trace("Get connection in addRiddle method");
+
+            Connection conn = DBConst.connectionPool.retrieve();
+            PreparedStatement preparedStatement = conn.prepareStatement(SQL_ADD_RIDDLE);
+
+            connPuts = conn;
+            closePS = preparedStatement;
+
+            preparedStatement.setString(1, riddle.getName());
+            preparedStatement.setString(2, riddle.getText());
+            preparedStatement.setString(3, riddle.getAnswer());
+            preparedStatement.setInt(4, riddle.getLevel());
+            preparedStatement.setString(5, riddle.getCategory());
+            preparedStatement.setInt(6, id);
+
+            int count = preparedStatement.executeUpdate();
+
+            if (count > 0) {
+                logger.debug("insert " + count);
+            } else {
+                logger.debug(riddle.getName() + "not inserted");
+            }
+
+        } catch (SQLException e) {
+            logger.error(e);
+            throw new RiddleDaoException();
+        } finally {
+            try {
+                if (connPuts != null) closePS.close();
+            } catch (SQLException e) {
+                logger.error(e);
+            }
+            logger.trace("Close PreparedStatement in registrationUser method");
+            logger.trace("Return connection in registrationUser method");
+
+            if (connPuts != null) DBConst.connectionPool.putback(connPuts);
+        }
+
+    }
+
+    public void updateRiddle(Riddle riddle) throws RiddleDaoException {
+        logger.trace("Connection to DB in updateRiddle method");
+
+        Connection connPuts = null;
+        PreparedStatement closePS = null;
+
+        try {
+            logger.trace("Get connection in updateRiddle method");
+
+            Connection conn = DBConst.connectionPool.retrieve();
+            PreparedStatement preparedStatement = conn.prepareStatement(SQL_UPDATE_RIDDLE);
+
+            connPuts = conn;
+            closePS = preparedStatement;
+
+            preparedStatement.setString(1, riddle.getName());
+            preparedStatement.setString(2, riddle.getText());
+            preparedStatement.setString(3, riddle.getAnswer());
+            preparedStatement.setInt(4, riddle.getLevel());
+            preparedStatement.setString(5, riddle.getCategory());
+            preparedStatement.setInt(6, riddle.getIdRiddle());
+
+            preparedStatement.executeUpdate();
+
+        } catch (SQLException e) {
+            logger.error(e);
+            throw new RiddleDaoException();
+        } finally {
+            try {
+                if (connPuts != null) closePS.close();
+            } catch (SQLException e) {
+                logger.error(e);
+            }
+            logger.trace("Close PreparedStatement in blockOrUnblockRiddle method");
+            logger.trace("Return connection in blockOrUnblockRiddle method");
+            if (connPuts != null) DBConst.connectionPool.putback(connPuts);
+        }
+
     }
 }

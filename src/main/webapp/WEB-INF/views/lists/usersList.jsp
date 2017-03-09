@@ -9,8 +9,7 @@
 </head>
 <body>
 <h1>List</h1>
-<%--<a href="/lections">Лекции</a><br>--%>
-<%--<a href="/addstudent">Добавить студента</a>--%>
+
 <table border="1">
     <tr>
         <th>ID</th>

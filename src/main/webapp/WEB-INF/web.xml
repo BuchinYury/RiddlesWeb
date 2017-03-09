@@ -15,11 +15,11 @@
     </filter>
     <filter-mapping>
         <filter-name>AuthorizationFilter</filter-name>
-        <url-pattern>/adminDashboard</url-pattern>
-        <url-pattern>/userDashboard</url-pattern>
+        <!--<url-pattern>/adminDashboard</url-pattern>-->
+        <!--<url-pattern>/userDashboard</url-pattern>-->
         <url-pattern>/usersList</url-pattern>
         <url-pattern>/riddlesList</url-pattern>
-        <url-pattern>/editRiddle</url-pattern>
+        <!--<url-pattern>/editRiddle</url-pattern>-->
         <url-pattern>/logout</url-pattern>
         <url-pattern>/dashboard</url-pattern>
     </filter-mapping>

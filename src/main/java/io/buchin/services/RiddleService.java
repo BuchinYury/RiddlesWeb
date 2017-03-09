@@ -28,4 +28,12 @@ public class RiddleService {
     public void blockOrUnblockRiddle(int id, int block) throws RiddleDaoException {
         riddleDAO.blockOrUnblockRiddle(id, block);
     }
+
+    public void addRiddle(int id, Riddle riddle) throws RiddleDaoException {
+        riddleDAO.addRiddle(id, riddle);
+    }
+
+    public void updateRiddle(Riddle riddle) throws RiddleDaoException {
+        riddleDAO.updateRiddle(riddle);
+    }
 }
