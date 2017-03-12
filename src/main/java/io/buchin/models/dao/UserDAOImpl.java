@@ -16,8 +16,8 @@ import java.util.List;
  * Created by yuri on 24.02.17.
  */
 @Repository
-public class UserDAO {
-    private static Logger logger = Logger.getLogger(UserDAO.class);
+public class UserDAOImpl implements IUserDAO {
+    private static Logger logger = Logger.getLogger(UserDAOImpl.class);
 
     private static final String SQL_FIND_USER = "SELECT * FROM users where login=? AND password=?";
     private static final String SQL_FIND_USER_BY_ID = "SELECT * FROM users where id_user = ?";
@@ -25,6 +25,7 @@ public class UserDAO {
     private static final String SQL_ALL_USER = "SELECT * FROM users";
     private static final String SQL_UPDATE_RIDDLE = "UPDATE users SET notification = ? WHERE id_user = ?";
 
+    @Override
     public User getUserByLoginAndPassword(String login, String password) throws UserDaoException {
         User user = new User();
         logger.trace("Connection to DB in getUser method");
@@ -59,6 +60,8 @@ public class UserDAO {
                 user.setPassword(resultSet.getString("password"));
                 user.setUserName(resultSet.getString("user_name"));
                 user.setEmail(resultSet.getString("email"));
+
+
             }
         } catch (SQLException e) {
             logger.error("SqlExp in getUser method + errorMes - " + e);
@@ -79,6 +82,7 @@ public class UserDAO {
         return user;
     }
 
+    @Override
     public boolean registrationUser(String login, String password, String userName, String email) throws UserDaoException {
         logger.trace("Connection to DB in registration method");
 
@@ -126,6 +130,7 @@ public class UserDAO {
         return false;
     }
 
+    @Override
     public List<User> getAllUsers() throws UserDaoException {
         List<User> usersList = new ArrayList<>();
 
@@ -180,6 +185,7 @@ public class UserDAO {
         return usersList;
     }
 
+    @Override
     public void sendNotification(int id, int notification) throws UserDaoException {
         logger.trace("Connection to DB in sendNotification method");
 
@@ -216,6 +222,7 @@ public class UserDAO {
     }
 
 
+    @Override
     public User getUserById(int id) throws UserDaoException {
         logger.trace("Connection to DB in getUserById method");
 

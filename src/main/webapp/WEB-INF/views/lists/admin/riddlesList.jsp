@@ -39,7 +39,7 @@
             <td><c:out value="${riddle.level}"></c:out></td>
             <td><c:out value="${riddle.idUser}"></c:out></td>
             <td><c:out value="${riddle.block}"></c:out></td>
-            <%--<td><a href="/editRiddle?id=${riddle.idRiddle}">Просмотреть</a></td>--%>
+            <td><a href="/editRiddle/${riddle.idRiddle}">Редактировать</a></td>
             <%--<td><a href="/delete?id=${user.id}">Delete</a></td>--%>
         </tr>
 
@@ -48,19 +48,13 @@
 
 <h3>Добавить загадку</h3>
 
-<%--<c:url var="addAction" value="/books/add"/>--%>
-<c:url var="addAction" value="/addRiddle"/>
-
-<%--private int idRiddle;--%>
-<%--private String name;--%>
-<%--private String text;--%>
-<%--private String answer;--%>
-<%--private int level;--%>
-<%--private String category;--%>
-<%--private int idUser;--%>
-<%--private boolean block;--%>
+<%--<c:url var="addAction" value="/addRiddle"/>--%>
 
 <form:form action="/addRiddle" commandName="riddle">
+    <c:if test="${!empty mes}">
+        ${mes}
+    </c:if>
+    <br>
     <table>
         <c:if test="${!empty riddle.name}">
             <tr>
@@ -130,11 +124,12 @@
         <tr>
             <td>
                 <form:label path="idUser">
-                    <spring:message text="User ID"/>
+                    <spring:message text="User add ID"/>
                 </form:label>
             </td>
             <td>
-                <form:input path="idUser"/>
+                <form:input path="idUser" readonly="true" size="8" disabled="true"/>
+                <form:hidden path="idUser"/>
             </td>
         </tr>
         </c:if>

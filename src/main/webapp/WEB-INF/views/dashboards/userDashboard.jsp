@@ -13,6 +13,9 @@
     <title>Title</title>
 </head>
 <body>
-
+<%--<a href="/user/profile">Редактирование профиля</a><br>--%>
+<a href="/user/riddlesList">База загадок</a><br>
+<a href="/user/myRiddles">Мои загадки</a><br>
+<a href="/logout">Logout</a>
 </body>
 </html>

@@ -4,26 +4,17 @@
          xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
          version="3.1">
 
-    <!--<welcome-file-list>-->
-    <!--<welcome-file>login.jsp</welcome-file>-->
-    <!--</welcome-file-list>-->
+    <!-- Spring Security -->
+    <!--<filter>-->
+    <!--<filter-name>springSecurityFilterChain</filter-name>-->
+    <!--<filter-class>org.springframework.web.filter.DelegatingFilterProxy-->
+    <!--</filter-class>-->
+    <!--</filter>-->
 
-
-    <filter>
-        <filter-name>AuthorizationFilter</filter-name>
-        <filter-class>io.buchin.controllers.filters.AuthorizationFilter</filter-class>
-    </filter>
-    <filter-mapping>
-        <filter-name>AuthorizationFilter</filter-name>
-        <!--<url-pattern>/adminDashboard</url-pattern>-->
-        <!--<url-pattern>/userDashboard</url-pattern>-->
-        <url-pattern>/usersList</url-pattern>
-        <url-pattern>/riddlesList</url-pattern>
-        <!--<url-pattern>/editRiddle</url-pattern>-->
-        <url-pattern>/logout</url-pattern>
-        <url-pattern>/dashboard</url-pattern>
-    </filter-mapping>
-
+    <!--<filter-mapping>-->
+    <!--<filter-name>springSecurityFilterChain</filter-name>-->
+    <!--<url-pattern>/*</url-pattern>-->
+    <!--</filter-mapping>-->
 
 
     <!--Spring MVC-->
@@ -48,77 +39,92 @@
     </servlet-mapping>
 
 
+    <!--Filters-->
+    <filter>
+        <filter-name>AuthorizationFilter</filter-name>
+        <filter-class>io.buchin.controllers.filters.AuthorizationFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>AuthorizationFilter</filter-name>
+
+        <url-pattern>/usersList</url-pattern>
+        <url-pattern>/editRiddle/*</url-pattern>
+        <url-pattern>/riddlesList</url-pattern>
+        <url-pattern>/logout</url-pattern>
+        <url-pattern>/dashboard</url-pattern>
+    </filter-mapping>
+
     <!--Servlets-->
     <!--<servlet>-->
-        <!--<servlet-name>Login</servlet-name>-->
-        <!--<servlet-class>io.buchin.controllers.servlets.common.LoginServlet</servlet-class>-->
+    <!--<servlet-name>Login</servlet-name>-->
+    <!--<servlet-class>io.buchin.controllers.servlets.common.LoginServlet</servlet-class>-->
     <!--</servlet>-->
     <!--<servlet-mapping>-->
-        <!--<servlet-name>Login</servlet-name>-->
-        <!--<url-pattern>/login</url-pattern>-->
+    <!--<servlet-name>Login</servlet-name>-->
+    <!--<url-pattern>/login</url-pattern>-->
     <!--</servlet-mapping>-->
 
     <!--<servlet>-->
-        <!--<servlet-name>Logout</servlet-name>-->
-        <!--<servlet-class>io.buchin.controllers.servlets.common.LogoutServlet</servlet-class>-->
+    <!--<servlet-name>Logout</servlet-name>-->
+    <!--<servlet-class>io.buchin.controllers.servlets.common.LogoutServlet</servlet-class>-->
     <!--</servlet>-->
     <!--<servlet-mapping>-->
-        <!--<servlet-name>Logout</servlet-name>-->
-        <!--<url-pattern>/logout</url-pattern>-->
+    <!--<servlet-name>Logout</servlet-name>-->
+    <!--<url-pattern>/logout</url-pattern>-->
     <!--</servlet-mapping>-->
 
     <!--<servlet>-->
-        <!--<servlet-name>Registration</servlet-name>-->
-        <!--<servlet-class>io.buchin.controllers.servlets.common.RegistrationServlet</servlet-class>-->
+    <!--<servlet-name>Registration</servlet-name>-->
+    <!--<servlet-class>io.buchin.controllers.servlets.common.RegistrationServlet</servlet-class>-->
     <!--</servlet>-->
     <!--<servlet-mapping>-->
-        <!--<servlet-name>Registration</servlet-name>-->
-        <!--<url-pattern>/registration</url-pattern>-->
+    <!--<servlet-name>Registration</servlet-name>-->
+    <!--<url-pattern>/registration</url-pattern>-->
     <!--</servlet-mapping>-->
 
     <!--<servlet>-->
-        <!--<servlet-name>UserDashboard</servlet-name>-->
-        <!--<servlet-class>io.buchin.controllers.servlets.dashboards.UserDashboardServlet</servlet-class>-->
+    <!--<servlet-name>UserDashboard</servlet-name>-->
+    <!--<servlet-class>io.buchin.controllers.servlets.dashboards.UserDashboardServlet</servlet-class>-->
     <!--</servlet>-->
     <!--<servlet-mapping>-->
-        <!--<servlet-name>UserDashboard</servlet-name>-->
-        <!--<url-pattern>/userDashboard</url-pattern>-->
+    <!--<servlet-name>UserDashboard</servlet-name>-->
+    <!--<url-pattern>/userDashboard</url-pattern>-->
     <!--</servlet-mapping>-->
 
     <!--<servlet>-->
-        <!--<servlet-name>AdminDashboard</servlet-name>-->
-        <!--<servlet-class>io.buchin.controllers.servlets.dashboards.AdminDashboardServlet</servlet-class>-->
+    <!--<servlet-name>AdminDashboard</servlet-name>-->
+    <!--<servlet-class>io.buchin.controllers.servlets.dashboards.AdminDashboardServlet</servlet-class>-->
     <!--</servlet>-->
     <!--<servlet-mapping>-->
-        <!--<servlet-name>AdminDashboard</servlet-name>-->
-        <!--<url-pattern>/adminDashboard</url-pattern>-->
+    <!--<servlet-name>AdminDashboard</servlet-name>-->
+    <!--<url-pattern>/adminDashboard</url-pattern>-->
     <!--</servlet-mapping>-->
 
     <!--<servlet>-->
-        <!--<servlet-name>UsersList</servlet-name>-->
-        <!--<servlet-class>io.buchin.controllers.servlets.lists.UsersListServlet</servlet-class>-->
+    <!--<servlet-name>UsersList</servlet-name>-->
+    <!--<servlet-class>io.buchin.controllers.servlets.lists.UsersListServlet</servlet-class>-->
     <!--</servlet>-->
     <!--<servlet-mapping>-->
-        <!--<servlet-name>UsersList</servlet-name>-->
-        <!--<url-pattern>/usersList</url-pattern>-->
+    <!--<servlet-name>UsersList</servlet-name>-->
+    <!--<url-pattern>/usersList</url-pattern>-->
     <!--</servlet-mapping>-->
 
     <!--<servlet>-->
-        <!--<servlet-name>RiddlesList</servlet-name>-->
-        <!--<servlet-class>io.buchin.controllers.servlets.lists.RiddlesListServlet</servlet-class>-->
+    <!--<servlet-name>RiddlesList</servlet-name>-->
+    <!--<servlet-class>io.buchin.controllers.servlets.lists.RiddlesListServlet</servlet-class>-->
     <!--</servlet>-->
     <!--<servlet-mapping>-->
-        <!--<servlet-name>RiddlesList</servlet-name>-->
-        <!--<url-pattern>/riddlesList</url-pattern>-->
+    <!--<servlet-name>RiddlesList</servlet-name>-->
+    <!--<url-pattern>/riddlesList</url-pattern>-->
     <!--</servlet-mapping>-->
 
     <!--<servlet>-->
-        <!--<servlet-name>RiddlesEdit</servlet-name>-->
-        <!--<servlet-class>io.buchin.controllers.servlets.edits.RiddleEditServlet</servlet-class>-->
+    <!--<servlet-name>RiddlesEdit</servlet-name>-->
+    <!--<servlet-class>io.buchin.controllers.servlets.edits.RiddleEditServlet</servlet-class>-->
     <!--</servlet>-->
     <!--<servlet-mapping>-->
-        <!--<servlet-name>RiddlesEdit</servlet-name>-->
-        <!--<url-pattern>/editRiddle</url-pattern>-->
+    <!--<servlet-name>RiddlesEdit</servlet-name>-->
+    <!--<url-pattern>/editRiddle</url-pattern>-->
     <!--</servlet-mapping>-->
 
 

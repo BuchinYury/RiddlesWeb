@@ -3,12 +3,11 @@ package io.buchin.controllers.servlets.edits;
 import io.buchin.common.exceptions.RiddleDaoException;
 import io.buchin.controllers.servlets.FatherServlets;
 import io.buchin.models.pojo.Riddle;
+import io.buchin.services.IRiddleService;
 import org.apache.log4j.Logger;
-import io.buchin.services.RiddleService;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import javax.servlet.ServletException;
-import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
@@ -20,7 +19,7 @@ public class RiddleEditServlet extends FatherServlets {
     private static Logger logger = Logger.getLogger(RiddleEditServlet.class);
 
     @Autowired
-    private RiddleService riddleService;
+    private IRiddleService riddleService;
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {

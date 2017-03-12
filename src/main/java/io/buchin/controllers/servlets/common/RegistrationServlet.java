@@ -2,12 +2,11 @@ package io.buchin.controllers.servlets.common;
 
 import io.buchin.common.exceptions.UserDaoException;
 import io.buchin.controllers.servlets.FatherServlets;
+import io.buchin.services.IUserService;
 import org.apache.log4j.Logger;
-import io.buchin.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import javax.servlet.ServletException;
-import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
@@ -19,7 +18,7 @@ public class RegistrationServlet extends FatherServlets {
     private static Logger logger = Logger.getLogger(RegistrationServlet.class);
 
     @Autowired
-    private UserService userService;
+    private IUserService userService;
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {

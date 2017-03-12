@@ -1,14 +1,11 @@
 package io.buchin.controllers.mvccontrollers;
 
 import io.buchin.common.exceptions.UserDaoException;
-import io.buchin.controllers.servlets.common.LoginServlet;
 import io.buchin.models.pojo.User;
-import io.buchin.services.UserService;
+import io.buchin.services.IUserService;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -23,13 +20,12 @@ import javax.servlet.http.HttpSession;
 public class LoginController {
     private static Logger logger = Logger.getLogger(LoginController.class);
 
-    @Autowired
-    private UserService userService;
+    private IUserService userService;
 
-//    @Autowired
-//    public void setUserService(IUserService userService) {
-//        this.userService = userService;
-//    }
+    @Autowired
+    public void setUserService(IUserService userService) {
+        this.userService = userService;
+    }
 
     @RequestMapping(value = "/", method = RequestMethod.GET)
     public String showBasePage() {
@@ -44,6 +40,13 @@ public class LoginController {
     @RequestMapping(value = "/login", method = RequestMethod.GET)
     public String showLoginPage() {
         return "main/login";
+    }
+
+    @RequestMapping(value = "/logout", method = RequestMethod.GET)
+    public String logout() {
+        logger.trace("LogoutController - LOGOUT");
+
+        return "redirect:/login";
     }
 
     @RequestMapping(value = "/login", method = RequestMethod.POST)

@@ -15,8 +15,8 @@ import java.util.List;
  */
 
 @Repository
-public class RiddleDAO {
-    private static Logger logger = Logger.getLogger(RiddleDAO.class);
+public class RiddleDAOImpl implements IRiddleDAO {
+    private static Logger logger = Logger.getLogger(RiddleDAOImpl.class);
 
     private static final String SQL_ALL_RIDDLE = "SELECT * FROM riddles";
     private static final String SQL_FIND_RIDDLE = "SELECT * FROM riddles WHERE id_riddle = ?";
@@ -24,6 +24,9 @@ public class RiddleDAO {
     private static final String SQL_ADD_RIDDLE = "INSERT INTO riddles (short_name, text_riddle, answer, level, category, id_user) VALUES(?,?,?,?,?,?)";
     private static final String SQL_UPDATE_RIDDLE = "UPDATE riddles SET short_name = ?, text_riddle = ?, answer = ?, level = ?, category = ? WHERE id_riddle = ?";
 
+    private static final String SQL_UPDATE_SOLVERIDDLE = "UPDATE solveRiddle SET user_id = ?, text_riddle = ?, answer = ?, level = ?, category = ? WHERE id_riddle = ?";
+
+    @Override
     public List<Riddle> getAllRiddles() throws RiddleDaoException {
         List<Riddle> riddlesList = new ArrayList<>();
 
@@ -77,6 +80,7 @@ public class RiddleDAO {
         return riddlesList;
     }
 
+    @Override
     public Riddle getRiddleById(int id) throws RiddleDaoException {
         logger.trace("Connection to DB in getRiddleById method");
 
@@ -132,6 +136,7 @@ public class RiddleDAO {
         return riddle;
     }
 
+    @Override
     public void blockOrUnblockRiddle(int id, int block) throws RiddleDaoException {
         logger.trace("Connection to DB in blockOrUnblockRiddle method");
 
@@ -167,6 +172,7 @@ public class RiddleDAO {
         }
     }
 
+    @Override
     public void addRiddle(int id, Riddle riddle) throws RiddleDaoException {
         logger.trace("Connection to DB in addRiddle method");
 
@@ -214,6 +220,7 @@ public class RiddleDAO {
 
     }
 
+    @Override
     public void updateRiddle(Riddle riddle) throws RiddleDaoException {
         logger.trace("Connection to DB in updateRiddle method");
 
@@ -247,10 +254,56 @@ public class RiddleDAO {
             } catch (SQLException e) {
                 logger.error(e);
             }
-            logger.trace("Close PreparedStatement in blockOrUnblockRiddle method");
-            logger.trace("Return connection in blockOrUnblockRiddle method");
+            logger.trace("Close PreparedStatement in updateRiddle method");
+            logger.trace("Return connection in updateRiddle method");
             if (connPuts != null) DBConst.connectionPool.putback(connPuts);
         }
+
+    }
+
+    @Override
+    public void updateSolveRiddle(int idRiddle, int idUser) throws RiddleDaoException{
+        logger.trace("Connection to DB in updateSolveRiddle method");
+
+        Connection connPuts = null;
+        PreparedStatement closePS = null;
+
+        try {
+            logger.trace("Get connection in updateSolveRiddle method");
+
+            Connection conn = DBConst.connectionPool.retrieve();
+            PreparedStatement preparedStatement = conn.prepareStatement(SQL_UPDATE_SOLVERIDDLE);
+
+            connPuts = conn;
+            closePS = preparedStatement;
+
+            preparedStatement.setString(1, riddle.getName());
+            preparedStatement.setString(2, riddle.getText());
+            preparedStatement.setString(3, riddle.getAnswer());
+            preparedStatement.setInt(4, riddle.getLevel());
+            preparedStatement.setString(5, riddle.getCategory());
+            preparedStatement.setInt(6, riddle.getIdRiddle());
+
+            preparedStatement.executeUpdate();
+
+        } catch (SQLException e) {
+            logger.error(e);
+            throw new RiddleDaoException();
+        } finally {
+            try {
+                if (connPuts != null) closePS.close();
+            } catch (SQLException e) {
+                logger.error(e);
+            }
+            logger.trace("Close PreparedStatement in updateSolveRiddle method");
+            logger.trace("Return connection in updateSolveRiddle method");
+            if (connPuts != null) DBConst.connectionPool.putback(connPuts);
+        }
+
+    }
+
+    @Override
+    public void addSolveRiddle(int idRiddle, int idUser) throws RiddleDaoException{
 
     }
 }

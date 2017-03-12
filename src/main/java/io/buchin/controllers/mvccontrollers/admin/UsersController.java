@@ -1,8 +1,8 @@
-package io.buchin.controllers.mvccontrollers;
+package io.buchin.controllers.mvccontrollers.admin;
 
 import io.buchin.common.exceptions.UserDaoException;
 import io.buchin.models.pojo.User;
-import io.buchin.services.UserService;
+import io.buchin.services.IUserService;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -20,7 +20,7 @@ public class UsersController {
     private static Logger logger = Logger.getLogger(UsersController.class);
 
     @Autowired
-    private UserService userService;
+    private IUserService userService;
 
     @RequestMapping(value = "/usersList", method = RequestMethod.GET)
     public String showUsersListPage(Model model) {
@@ -34,7 +34,7 @@ public class UsersController {
             return "redirect:/error";
         }
 
-        return "lists/usersList";
+        return "lists/admin/usersList";
     }
 
 
