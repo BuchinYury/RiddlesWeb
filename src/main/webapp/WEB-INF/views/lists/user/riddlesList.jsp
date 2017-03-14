@@ -35,8 +35,10 @@
             <td><c:out value="${riddle.name}"></c:out></td>
             <td><c:out value="${riddle.category}"></c:out></td>
             <td><c:out value="${riddle.level}"></c:out></td>
-            <td><a href="/user/solveRiddle/${riddle.idRiddle}">Решить загадку</a></td>
-                <%--<td><a href="/delete?id=${user.id}">Delete</a></td>--%>
+            <td>
+                <a href="/user/solveRiddle/${riddle.idRiddle}">Решить загадку</a>
+                <a href="/discusRiddle/${riddle.idRiddle}">Комментарии</a>
+            </td>
         </tr>
 
     </c:forEach>

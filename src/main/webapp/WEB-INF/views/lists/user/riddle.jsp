@@ -16,18 +16,22 @@
 </head>
 <body>
 
-<h3>Ответить на загадку</h3>
+<c:if test="${!UserSolveRiddle}">
+    <h3>Ответить на загадку</h3>
+    <c:if test="${!empty mesAnswer}">
+        ${mesAnswer}
+    </c:if>
+    <form action="/user/solveRiddle/${riddle.idRiddle}" method="post">
+        <label for="answer">Ваш ответ:</label>
+        <input type="text" name="answer" id="answer" value="" placeholder="Input"><br>
 
-<c:if test="${!empty mesAnswer}">
-    ${mesAnswer}
+        <input type="submit" value="Ответить">
+    </form>
+</c:if>
+<c:if test="${UserSolveRiddle}">
+    <h2>Вы уже решили эту загадку</h2>
 </c:if>
 
-<form action="/user/solveRiddle/${riddle.idRiddle}" method="post">
-    <label for="answer">Ваш ответ:</label>
-    <input type="text" name="answer" id="answer" value="" placeholder="Input"><br>
-
-    <input type="submit" value="Ответить">
-</form>
 
 <h3>Информация о загадке</h3>
 <table>
@@ -44,6 +48,8 @@
         <td><c:out value="${riddle.category}"></c:out></td>
     </tr>
 </table>
+<br>
+<a href="/discusRiddle/${riddle.idRiddle}">Комментарии к загадке</a>
 
 </body>
 </html>

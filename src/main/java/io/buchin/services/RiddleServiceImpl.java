@@ -45,4 +45,16 @@ public class RiddleServiceImpl implements IRiddleService {
     public void updateRiddle(Riddle riddle) throws RiddleDaoException {
         riddleDAO.updateRiddle(riddle);
     }
+
+    @Override
+    public void updateSolveRiddle(int idRiddle, int idUser) throws RiddleDaoException {
+        riddleDAO.updateSolveRiddle(idRiddle, idUser);
+    }
+
+    @Override
+    public boolean getSolveRiddle(int idRiddle, int idUser) throws RiddleDaoException {
+        return riddleDAO.getSolveRiddle(idRiddle, idUser);
+    }
+
+
 }

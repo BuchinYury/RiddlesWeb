@@ -24,7 +24,8 @@ public class RiddleDAOImpl implements IRiddleDAO {
     private static final String SQL_ADD_RIDDLE = "INSERT INTO riddles (short_name, text_riddle, answer, level, category, id_user) VALUES(?,?,?,?,?,?)";
     private static final String SQL_UPDATE_RIDDLE = "UPDATE riddles SET short_name = ?, text_riddle = ?, answer = ?, level = ?, category = ? WHERE id_riddle = ?";
 
-    private static final String SQL_UPDATE_SOLVERIDDLE = "UPDATE solveRiddle SET user_id = ?, text_riddle = ?, answer = ?, level = ?, category = ? WHERE id_riddle = ?";
+    private static final String SQL_UPDATE_SOLVE_RIDDLE = "UPDATE solveRiddle SET solve = ? WHERE user_id = ? AND riddle_id = ?";
+    private static final String SQL_FIND_SOLVE_RIDDLE = "SELECT * FROM solveRiddle WHERE user_id = ? and riddle_id = ?";
 
     @Override
     public List<Riddle> getAllRiddles() throws RiddleDaoException {
@@ -272,17 +273,14 @@ public class RiddleDAOImpl implements IRiddleDAO {
             logger.trace("Get connection in updateSolveRiddle method");
 
             Connection conn = DBConst.connectionPool.retrieve();
-            PreparedStatement preparedStatement = conn.prepareStatement(SQL_UPDATE_SOLVERIDDLE);
+            PreparedStatement preparedStatement = conn.prepareStatement(SQL_UPDATE_SOLVE_RIDDLE);
 
             connPuts = conn;
             closePS = preparedStatement;
 
-            preparedStatement.setString(1, riddle.getName());
-            preparedStatement.setString(2, riddle.getText());
-            preparedStatement.setString(3, riddle.getAnswer());
-            preparedStatement.setInt(4, riddle.getLevel());
-            preparedStatement.setString(5, riddle.getCategory());
-            preparedStatement.setInt(6, riddle.getIdRiddle());
+            preparedStatement.setInt(1, 1);
+            preparedStatement.setInt(2, idUser);
+            preparedStatement.setInt(3, idRiddle);
 
             preparedStatement.executeUpdate();
 
@@ -303,7 +301,49 @@ public class RiddleDAOImpl implements IRiddleDAO {
     }
 
     @Override
-    public void addSolveRiddle(int idRiddle, int idUser) throws RiddleDaoException{
+    public boolean getSolveRiddle(int idRiddle, int idUser) throws RiddleDaoException{
+        logger.trace("Connection to DB in getSolveRiddle method");
 
+        Connection connPuts = null;
+        PreparedStatement closePS = null;
+
+        try {
+            logger.trace("Get connection in getSolveRiddle method");
+
+            Connection conn = DBConst.connectionPool.retrieve();
+            PreparedStatement preparedStatement = conn.prepareStatement(SQL_FIND_SOLVE_RIDDLE);
+
+            connPuts = conn;
+            closePS = preparedStatement;
+
+            preparedStatement.setInt(1, idUser);
+            preparedStatement.setInt(2, idRiddle);
+
+            ResultSet resultSet = preparedStatement.executeQuery();
+
+            if (resultSet.next()) {
+                logger.debug("Find solve riddle user with id - " + idUser);
+
+                if (resultSet.getInt("solve") == 0) return false;
+                else return true;
+
+            } else {
+                logger.debug("Solve riddle - " + idRiddle + " user - " + idUser + ", not found");
+            }
+        } catch (SQLException e) {
+            logger.error(e);
+            throw new RiddleDaoException();
+        } finally {
+            try {
+                if (connPuts != null) closePS.close();
+            } catch (SQLException e) {
+                logger.error(e);
+            }
+            logger.trace("Close PreparedStatement in getSolveRiddle method");
+            logger.trace("Return connection in getSolveRiddle method");
+            if (connPuts != null) DBConst.connectionPool.putback(connPuts);
+        }
+
+        return false;
     }
 }

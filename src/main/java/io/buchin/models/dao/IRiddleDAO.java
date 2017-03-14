@@ -19,7 +19,7 @@ public interface IRiddleDAO {
 
     void updateRiddle(Riddle riddle) throws RiddleDaoException;
 
-    void updateSolveRiddle(int idRiddle, int idUser) throws RiddleDaoException
+    void updateSolveRiddle(int idRiddle, int idUser) throws RiddleDaoException;
 
-    void addSolveRiddle(int idRiddle, int idUser) throws RiddleDaoException
+    boolean getSolveRiddle(int idRiddle, int idUser) throws RiddleDaoException;
 }

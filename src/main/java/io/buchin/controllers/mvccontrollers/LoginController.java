@@ -6,6 +6,7 @@ import io.buchin.services.IUserService;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -32,25 +33,16 @@ public class LoginController {
         return "start";
     }
 
-    @RequestMapping(value = "/registration", method = RequestMethod.GET)
-    public String showRegistrationPage() {
-        return "main/registration";
-    }
-
     @RequestMapping(value = "/login", method = RequestMethod.GET)
-    public String showLoginPage() {
+    public String showLoginPage(Model model) {
+        model.addAttribute("mes", "");
         return "main/login";
     }
 
-    @RequestMapping(value = "/logout", method = RequestMethod.GET)
-    public String logout() {
-        logger.trace("LogoutController - LOGOUT");
-
-        return "redirect:/login";
-    }
 
     @RequestMapping(value = "/login", method = RequestMethod.POST)
     public String loginUser(HttpSession session,
+                            Model model,
                             @RequestParam(value = "login") String login,
                             @RequestParam(value = "password") String password) {
         logger.trace("/login POST");
@@ -72,12 +64,20 @@ public class LoginController {
             } else {
                 logger.trace("not authorized");
                 session.setAttribute("id", null);
-                return "/login";
+                model.addAttribute("mes", "Неверное имя пользователя или пароль");
+                return "main/login";
             }
         } catch (UserDaoException e) {
             logger.error(e);
             return "/error.jsp";
         }
+    }
+
+    @RequestMapping(value = "/logout", method = RequestMethod.GET)
+    public String logout() {
+        logger.trace("LogoutController - LOGOUT");
+
+        return "redirect:/login";
     }
 
     @RequestMapping(value = "/dashboard", method = RequestMethod.GET)

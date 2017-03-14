@@ -13,6 +13,7 @@
     <title>Login</title>
 </head>
 <body>
+${mes}
 <div>
     <form action="/login" method="post">
         <label for="login">Login:</label>

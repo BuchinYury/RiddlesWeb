@@ -39,10 +39,8 @@
             <td><c:out value="${riddle.level}"></c:out></td>
             <td><c:out value="${riddle.idUser}"></c:out></td>
             <td><c:out value="${riddle.block}"></c:out></td>
-            <td>
-                <a href="/editRiddle/${riddle.idRiddle}">Редактировать</a>
-                <a href="/discusRiddle/${riddle.idRiddle}">Комментарии</a>
-            </td>
+            <td><a href="/user/editRiddle/${riddle.idRiddle}">Редактировать</a></td>
+                <%--<td><a href="/delete?id=${user.id}">Delete</a></td>--%>
         </tr>
 
     </c:forEach>
@@ -52,7 +50,7 @@
 
 <%--<c:url var="addAction" value="/addRiddle"/>--%>
 
-<form:form action="/addRiddle" commandName="riddle">
+<form:form action="/user/addRiddle" commandName="riddle">
     <c:if test="${!empty mes}">
         ${mes}
     </c:if>
@@ -123,17 +121,17 @@
         </tr>
 
         <c:if test="${!empty riddle.name}">
-        <tr>
-            <td>
-                <form:label path="idUser">
-                    <spring:message text="User add ID"/>
-                </form:label>
-            </td>
-            <td>
-                <form:input path="idUser" readonly="true" size="8" disabled="true"/>
-                <form:hidden path="idUser"/>
-            </td>
-        </tr>
+            <tr>
+                <td>
+                    <form:label path="idUser">
+                        <spring:message text="User add ID"/>
+                    </form:label>
+                </td>
+                <td>
+                    <form:input path="idUser" readonly="true" size="8" disabled="true"/>
+                    <form:hidden path="idUser"/>
+                </td>
+            </tr>
         </c:if>
 
         <tr>
