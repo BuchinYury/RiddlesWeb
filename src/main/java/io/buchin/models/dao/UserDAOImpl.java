@@ -21,6 +21,7 @@ public class UserDAOImpl implements IUserDAO {
 
     private static final String SQL_FIND_USER = "SELECT * FROM users where login=? AND password=?";
     private static final String SQL_FIND_USER_BY_ID = "SELECT * FROM users where id_user = ?";
+    private static final String SQL_FIND_USER_BY_LOGIN = "SELECT * FROM users where login = ?";
     private static final String SQL_CREATE_USER = "INSERT INTO users (login, password, user_name, email) VALUES(?, ?, ?, ?)";
     private static final String SQL_ALL_USER = "SELECT * FROM users";
     private static final String SQL_UPDATE_RIDDLE = "UPDATE users SET notification = ? WHERE id_user = ?";
@@ -277,6 +278,51 @@ public class UserDAOImpl implements IUserDAO {
         }
 
         return user;
+    }
+
+    @Override
+    public boolean findLogin(String login) throws UserDaoException {
+        logger.trace("Connection to DB in registration method");
+
+        Connection connPuts = null;
+        PreparedStatement closePS = null;
+
+        try {
+            logger.trace("Get connection in registrationUser method");
+
+            Connection conn = DBConst.connectionPool.retrieve();
+            PreparedStatement preparedStatement = conn.prepareStatement(SQL_FIND_USER_BY_LOGIN);
+
+            connPuts = conn;
+            closePS = preparedStatement;
+
+            preparedStatement.setString(1, login);
+
+            ResultSet resultSet = preparedStatement.executeQuery();
+
+            if (resultSet.next()) {
+                logger.trace("found " + login);
+                return true;
+
+            } else {
+                logger.debug(login + " not found");
+                return false;
+            }
+
+        } catch (SQLException e) {
+            logger.error(e);
+            throw new UserDaoException();
+        } finally {
+            try {
+                if (connPuts != null) closePS.close();
+            } catch (SQLException e) {
+                logger.error(e);
+            }
+            logger.trace("Close PreparedStatement in registrationUser method");
+            logger.trace("Return connection in registrationUser method");
+
+            if (connPuts != null) DBConst.connectionPool.putback(connPuts);
+        }
     }
 }
 

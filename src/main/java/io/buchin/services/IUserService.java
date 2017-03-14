@@ -21,4 +21,6 @@ public interface IUserService {
     void sendNotification(int id, int notification) throws UserDaoException;
 
     User getUserById(int id) throws UserDaoException;
+
+    boolean findLogin(String login) throws UserDaoException;
 }

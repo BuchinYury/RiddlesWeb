@@ -9,10 +9,8 @@ import java.security.NoSuchAlgorithmException;
  * Created by yuri on 14.03.17.
  */
 public class HashPass {
-    private static Logger logger = Logger.getLogger(HashPass.class);
 
     public static String passToDB(String password) {
-        logger.trace("Start hashing....");
 
         String sole = "bd0ff3aece06553e93eadedd15e321daa81d2d5985f1a6d7a645e1bfe18fe849";
 
@@ -26,12 +24,12 @@ public class HashPass {
     }
 
     private static String hashing(String hashWord) {
-        logger.trace("hash now");
+
         MessageDigest md = null;
         try {
             md = MessageDigest.getInstance("SHA-256");
         } catch (NoSuchAlgorithmException e) {
-            logger.error(e);
+            return "";
         } finally {
             if (md == null) return "";
         }
@@ -46,14 +44,11 @@ public class HashPass {
             sb.append(Integer.toString((byteData[i] & 0xff) + 0x100, 16).substring(1));
         }
 
-        logger.trace("hash yea");
-
         return sb.toString();
     }
 
 
     private static String mixWord(String wordToMix) {
-        logger.trace("mix now");
 
         StringBuilder result = new StringBuilder();
 
@@ -83,4 +78,5 @@ public class HashPass {
 
         return result.toString();
     }
+
 }

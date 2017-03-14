@@ -13,6 +13,8 @@
     <title>Title</title>
 </head>
 <body>
+${mes}<br>
+${mesLogin}
 <form action="/registration" method="post">
     <label for="login">Login:</label>
     <input type="text" name="login" id="login" value="" placeholder="Input"><br>

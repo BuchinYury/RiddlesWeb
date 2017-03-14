@@ -1,10 +1,7 @@
 package io.buchin.controllers.mvccontrollers.user;
 
-import io.buchin.common.exceptions.DiscusDaoException;
 import io.buchin.common.exceptions.RiddleDaoException;
-import io.buchin.models.pojo.Discus;
 import io.buchin.models.pojo.Riddle;
-import io.buchin.services.IDiscusService;
 import io.buchin.services.IRiddleService;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,8 +21,8 @@ import java.util.List;
  */
 @Controller
 @RequestMapping("/user")
-public class UserDashboardAction {
-    private static Logger logger = Logger.getLogger(UserDashboardAction.class);
+public class UserDashboardController {
+    private static Logger logger = Logger.getLogger(UserDashboardController.class);
 
     private IRiddleService riddleService;
     @Autowired

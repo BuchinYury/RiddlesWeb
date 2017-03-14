@@ -1,6 +1,7 @@
-package io.buchin.controllers.mvccontrollers;
+package io.buchin.controllers.mvccontrollers.commons;
 
 import io.buchin.common.exceptions.UserDaoException;
+import io.buchin.common.hash.HashPass;
 import io.buchin.models.pojo.User;
 import io.buchin.services.IUserService;
 import org.apache.log4j.Logger;
@@ -48,7 +49,10 @@ public class LoginController {
         logger.trace("/login POST");
 
         try {
-            User user = userService.authorize(login, password);
+            String pass = HashPass.passToDB(password);
+            if (pass.isEmpty()) return "redirect:/error";
+
+            User user = userService.authorize(login, pass);
 
             if (user.getIdUser() != 0) {
                 logger.trace("authorized and in session set attribute");
@@ -69,13 +73,15 @@ public class LoginController {
             }
         } catch (UserDaoException e) {
             logger.error(e);
-            return "/error.jsp";
+            return "redirect:/error";
         }
     }
 
     @RequestMapping(value = "/logout", method = RequestMethod.GET)
-    public String logout() {
+    public String logout(HttpSession session) {
         logger.trace("LogoutController - LOGOUT");
+
+        session.invalidate();
 
         return "redirect:/login";
     }

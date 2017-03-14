@@ -22,8 +22,8 @@ import java.util.List;
  * Created by yuri on 14.03.17.
  */
 @Controller
-public class AdminDashboardActions {
-    private static Logger logger = Logger.getLogger(AdminDashboardActions.class);
+public class AdminDashboardController {
+    private static Logger logger = Logger.getLogger(AdminDashboardController.class);
 
     private IRiddleService riddleService;
 
@@ -92,7 +92,7 @@ public class AdminDashboardActions {
         return "lists/admin/riddlesList";
     }
 
-    @RequestMapping("editRiddle/{id}")
+    @RequestMapping("/editRiddle/{id}")
     public String editBook(@PathVariable("id") int id,
                            Model model) {
         logger.trace("/edit");

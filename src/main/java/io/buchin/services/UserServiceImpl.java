@@ -45,4 +45,9 @@ public class UserServiceImpl implements IUserService {
     public User getUserById(int id) throws UserDaoException {
         return userDAO.getUserById(id);
     }
+
+    @Override
+    public boolean findLogin(String login) throws UserDaoException {
+        return userDAO.findLogin(login);
+    }
 }
