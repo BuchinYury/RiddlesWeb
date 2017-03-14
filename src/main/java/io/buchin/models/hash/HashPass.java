@@ -1,6 +1,4 @@
-package io.buchin.common.hash;
-
-import org.apache.log4j.Logger;
+package io.buchin.models.hash;
 
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;

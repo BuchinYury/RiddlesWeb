@@ -1,7 +1,7 @@
 package io.buchin.controllers.mvccontrollers.commons;
 
 import io.buchin.common.exceptions.UserDaoException;
-import io.buchin.common.hash.HashPass;
+import io.buchin.models.hash.HashPass;
 import io.buchin.services.IUserService;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
